@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectoSAD.Data;
+using System.Data.Linq;
 
 namespace ProjectoSAD
 {
@@ -40,10 +43,19 @@ namespace ProjectoSAD
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //A criar uma verificação de password
+
+            DataClasses1DataContext dc = new DataClasses1DataContext();
+
+            //Linq to SQL
+            var query = from user in dc.GetTable<user>() where (user.name == txtName.Text) select user;
+
+            MessageBox.Show(query.First().email);
+
             ListaProjectos lp = new Forms.ListaProjectos();
             lp.Show();
             this.Hide();
-            
+
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
