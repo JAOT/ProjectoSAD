@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SAD_DWF">
+  <DataContextMoniker Name="/SAD_DWFDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5d3b2473-ed75-4683-8345-2ede3233496f" absoluteBounds="0.75, 2.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SAD_DWFDataContext/type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71680e1e-ae64-450c-bd88-fd628002e8b5" absoluteBounds="0.765, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e128e033-c674-403c-9be7-26475cd16fed" absoluteBounds="3.5, 1, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/SAD_DWFDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c502a466-1ae2-4e43-a45c-c463ec112b4f" absoluteBounds="3.515, 1.46, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.01044840494792); (3.5 : 3.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SAD_DWFDataContext/type/type_user" />
+      <nodes>
+        <classShapeMoniker Id="5d3b2473-ed75-4683-8345-2ede3233496f" />
+        <classShapeMoniker Id="e128e033-c674-403c-9be7-26475cd16fed" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

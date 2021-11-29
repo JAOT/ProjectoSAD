@@ -43,18 +43,28 @@ namespace ProjectoSAD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //A criar uma verificação de password
+            string email = txtName.Text;
+            string password = txtPassword.Text;
 
-            DataClasses1DataContext dc = new DataClasses1DataContext();
+            SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+            List<user> users = (List<user>)sad_dwf.users.Where(u => u.email == email && u.password == password).ToList();
 
-            //Linq to SQL
-            var query = from user in dc.GetTable<user>() where (user.name == txtName.Text) select user;
+            if (users.Count == 1)
+            {
+                var fname = users.FirstOrDefault().fname;
+                var lname = users.FirstOrDefault().lname;
 
-            MessageBox.Show(query.First().email);
+                MessageBox.Show("Bem-vindo " + fname + " " + lname);
 
-            ListaProjectos lp = new Forms.ListaProjectos();
-            lp.Show();
-            this.Hide();
+                ListaProjectos lp = new Forms.ListaProjectos();
+                lp.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Utilizador ou password errados.\nPor favor, tentar de novo.");
+            }
+
 
         }
 
