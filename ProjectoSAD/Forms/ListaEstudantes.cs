@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace ProjectoSAD.Forms
 {
-    public partial class Estudantes : Form
+    public partial class ListaEstudantes : Form
     {
-        public Estudantes()
+        public ListaEstudantes()
         {
             InitializeComponent();
         }
@@ -26,34 +26,44 @@ namespace ProjectoSAD.Forms
             this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
         }
 
+        //importar csv
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            //importar csv
+            //Janela de importação de ficheiro
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Ficheiros CSV *.csv|*.csv";
             fileDialog.ShowDialog();
-            
-            var fich = fileDialog.FileName;
-            List<student> listaEstudantes;
 
-            if (fich!=null)
+            //foi selecionado um ficheiro csv?            
+            if (fileDialog.FileName!=null)
             {
+                //guardar o nome e caminho do ficheiro
+                var fich = fileDialog.FileName;
+                //criar uma nova lista de estudantes vazia
+                List<student> listaEstudantes;
+
+                //ler todo o conteúdo de ficheiro, importando os registos dos alunos
                 using (var reader = new StreamReader(fich))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     listaEstudantes = csv.GetRecords<student>().ToList();
                 }
-
+                //criação de uma ligação à base de dados
                 SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
 
+                //preparar as entidades aluno para inserção na tabela
                 foreach (var estudante in listaEstudantes)
                 {
+                    //campos com timestamp actual
                     estudante.created_at = DateTime.Now;
                     estudante.updated_at = DateTime.Now;
                     sad_dwf.students.InsertOnSubmit(estudante);
                 }
+                //inserir os registos na tabela
                 sad_dwf.SubmitChanges();
+                //actualizar o tale adapter com os dados acabados de inserir
                 this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
+
             }
         }
     }

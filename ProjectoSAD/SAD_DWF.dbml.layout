@@ -21,10 +21,16 @@
         <classShapeMoniker Id="b9f194a2-e219-449d-9309-dcfa6ae45ca9" />
       </nodes>
     </associationConnector>
-    <classShape Id="31170969-2afe-42b9-9cd4-5a42a0321d53" absoluteBounds="2.125, 1.625, 2, 1.9631982421875">
+    <classShape Id="31170969-2afe-42b9-9cd4-5a42a0321d53" absoluteBounds="2.75, 0.875, 2, 1.9631982421875">
       <DataClassMoniker Name="/SAD_DWFDataContext/student" />
       <nestedChildShapes>
-        <elementListCompartment Id="bfbd4163-cfc8-43c0-ae93-5932f4d4b8c6" absoluteBounds="2.14, 2.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bfbd4163-cfc8-43c0-ae93-5932f4d4b8c6" absoluteBounds="2.765, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce42ccd9-d673-4618-8136-92f59af8ee5f" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SAD_DWFDataContext/project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcb87c2e-dbda-4125-96f8-f0237748d160" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

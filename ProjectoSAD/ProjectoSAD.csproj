@@ -103,11 +103,11 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\GetTables.cs" />
-    <Compile Include="Forms\Estudantes.cs">
+    <Compile Include="Forms\ListaEstudantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Estudantes.Designer.cs">
-      <DependentUpon>Estudantes.cs</DependentUpon>
+    <Compile Include="Forms\ListaEstudantes.Designer.cs">
+      <DependentUpon>ListaEstudantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListaProjectos.cs">
       <SubType>Form</SubType>
@@ -138,8 +138,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Estudantes.resx">
-      <DependentUpon>Estudantes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ListaEstudantes.resx">
+      <DependentUpon>ListaEstudantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListaProjectos.resx">
       <DependentUpon>ListaProjectos.cs</DependentUpon>

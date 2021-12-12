@@ -29,13 +29,28 @@ namespace ProjectoSAD.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sad_dwfDataSet = new ProjectoSAD.sad_dwfDataSet();
+            this.sad_dwfDataSet1 = new ProjectoSAD.sad_dwfDataSet1();
+            this.saddwfDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projectsTableAdapter = new ProjectoSAD.sad_dwfDataSetTableAdapters.projectsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -46,32 +61,7 @@ namespace ProjectoSAD.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1083, 34);
             this.textBox1.TabIndex = 0;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Items.AddRange(new object[] {
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1",
-            "Projecto 1"});
-            this.listBox1.Location = new System.Drawing.Point(517, 178);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(577, 497);
-            this.listBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -117,31 +107,109 @@ namespace ProjectoSAD.Forms
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(124, 57);
             this.button3.TabIndex = 6;
-            this.button3.Text = "button3";
+            this.button3.Text = "Alunos";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.createdatDataGridViewTextBoxColumn,
+            this.updatedatDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.projectsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(368, 187);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(726, 451);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // createdatDataGridViewTextBoxColumn
+            // 
+            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
+            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
+            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
+            this.createdatDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // updatedatDataGridViewTextBoxColumn
+            // 
+            this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
+            this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
+            this.updatedatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
+            this.updatedatDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // projectsBindingSource
+            // 
+            this.projectsBindingSource.DataMember = "projects";
+            this.projectsBindingSource.DataSource = this.sad_dwfDataSet;
+            // 
+            // sad_dwfDataSet
+            // 
+            this.sad_dwfDataSet.DataSetName = "sad_dwfDataSet";
+            this.sad_dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sad_dwfDataSet1
+            // 
+            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet1";
+            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // saddwfDataSet1BindingSource
+            // 
+            this.saddwfDataSet1BindingSource.DataSource = this.sad_dwfDataSet1;
+            this.saddwfDataSet1BindingSource.Position = 0;
+            // 
+            // projectsTableAdapter
+            // 
+            this.projectsTableAdapter.ClearBeforeFill = true;
             // 
             // ListaProjectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 710);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ListaProjectos";
             this.Text = "ListaProjectos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaProjectos_FormClosing);
             this.Load += new System.EventHandler(this.ListaProjectos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,11 +218,20 @@ namespace ProjectoSAD.Forms
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource saddwfDataSet1BindingSource;
+        private sad_dwfDataSet1 sad_dwfDataSet1;
+        private sad_dwfDataSet sad_dwfDataSet;
+        private System.Windows.Forms.BindingSource projectsBindingSource;
+        private sad_dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
     }
 }

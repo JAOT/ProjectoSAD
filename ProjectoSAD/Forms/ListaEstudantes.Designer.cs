@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectoSAD.Forms
 {
-    partial class Estudantes
+    partial class ListaEstudantes
     {
         /// <summary>
         /// Required designer variable.

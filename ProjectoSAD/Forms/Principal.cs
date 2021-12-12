@@ -75,14 +75,7 @@ namespace ProjectoSAD
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //var encPassWord = EncriptaPassword(txtRegPassword.Text);
-            //var decPassword = DesencriptaPassword(encPassWord);
-            //verificação de campos em branco no momento do registo
-            bool registoOK = VerificaCamposVazios();
-            //registoOK = VerificaConfirmacaoPassword();
-
-
-            if (registoOK)
+            if (VerificaCamposVazios())
             {
                 SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
                 user user = sad_dwf.users.Where(u => u.email == txtEmailReg.Text).FirstOrDefault();
@@ -116,17 +109,27 @@ namespace ProjectoSAD
                 }
             }
         }
-
+        /// <summary>
+        /// Método de desencripta a password
+        /// </summary>
+        /// <param name="encPassWord"></param>
+        /// <returns>A password em texto legível</returns>
         private string DesencriptaPassword(string encPassWord)
         {
+            //chave de encriptação
             string EncryptionKey = "p@$sar1nh@";
+            //retirar os caracteres problemáticos
             encPassWord = encPassWord.Replace(" ", "+");
+            //criação da chave de desencriptação
             byte[] cipherBytes = Convert.FromBase64String(encPassWord);
+            //desencriptar a palavra recolhida
             using (Aes encryptor = Aes.Create())
             {
+                //criar a chave de derivação
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
+                //recriar a password em memória
                 using (MemoryStream ms = new MemoryStream())
                 {
                     using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
@@ -137,18 +140,30 @@ namespace ProjectoSAD
                     encPassWord = Encoding.Unicode.GetString(ms.ToArray());
                 }
             }
+            //devolver a password em formato legível
             return encPassWord;
         }
 
+        /// <summary>
+        /// Método para encriptação da password, antes de inserção na base de dados
+        /// </summary>
+        /// <returns>A password encriptada</returns>
+
         private string EncriptaPassword(string clearText)
         {
+            //chave de encriptação, conveniente ser guardada num ficheiro de configuração
             string EncryptionKey = "p@$sar1nh@";
+            //tranformação da password inserida num byte[]
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+            //início da encripatção da password, com o método AES
             using (Aes encryptor = Aes.Create())
             {
+                //derivação da chave de encriptação através da Encryptionkey
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
                 encryptor.Key = pdb.GetBytes(32);
                 encryptor.IV = pdb.GetBytes(16);
+
+                //escrita da password encriptada em memória
                 using (MemoryStream ms = new MemoryStream())
                 {
                     using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
@@ -162,6 +177,10 @@ namespace ProjectoSAD
             return clearText;
         }
 
+        /// <summary>
+        /// Verificação dos valores inseridos nas caixas de texto da password 
+        /// </summary>
+        /// <returns>False, caso as passwords não correspondam, True, caso sejam iguais</returns>
         private bool VerificaConfirmacaoPassword()
         {
             if (txtRegPassword.Text != txtRegPasswordVer.Text)
@@ -172,6 +191,10 @@ namespace ProjectoSAD
             return true;
         }
 
+        /// <summary>
+        /// Verificação da informação obrigatória inserida.
+        /// </summary>
+        /// <returns>False - se algum campo estiver vazio, Procede à verificação da password se estiver tudo preenchido</returns>
         private bool VerificaCamposVazios()
         {
             if (txtFnome.Text == "" || txtLNome.Text =="" || txtTelemovel.Text =="" || txtEmailReg.Text == "" || txtRegPassword.Text == "" || txtRegPasswordVer.Text == "")

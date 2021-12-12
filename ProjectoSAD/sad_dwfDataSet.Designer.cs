@@ -24,7 +24,7 @@ namespace ProjectoSAD {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class sad_dwfDataSet : global::System.Data.DataSet {
         
-        private studentsDataTable tablestudents;
+        private projectsDataTable tableprojects;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace ProjectoSAD {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["students"] != null)) {
-                    base.Tables.Add(new studentsDataTable(ds.Tables["students"]));
+                if ((ds.Tables["projects"] != null)) {
+                    base.Tables.Add(new projectsDataTable(ds.Tables["projects"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ProjectoSAD {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public studentsDataTable students {
+        public projectsDataTable projects {
             get {
-                return this.tablestudents;
+                return this.tableprojects;
             }
         }
         
@@ -152,8 +152,8 @@ namespace ProjectoSAD {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["students"] != null)) {
-                    base.Tables.Add(new studentsDataTable(ds.Tables["students"]));
+                if ((ds.Tables["projects"] != null)) {
+                    base.Tables.Add(new projectsDataTable(ds.Tables["projects"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ProjectoSAD {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablestudents = ((studentsDataTable)(base.Tables["students"]));
+            this.tableprojects = ((projectsDataTable)(base.Tables["projects"]));
             if ((initTable == true)) {
-                if ((this.tablestudents != null)) {
-                    this.tablestudents.InitVars();
+                if ((this.tableprojects != null)) {
+                    this.tableprojects.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace ProjectoSAD {
             this.Namespace = "http://tempuri.org/sad_dwfDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablestudents = new studentsDataTable();
-            base.Tables.Add(this.tablestudents);
+            this.tableprojects = new projectsDataTable();
+            base.Tables.Add(this.tableprojects);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializestudents() {
+        private bool ShouldSerializeprojects() {
             return false;
         }
         
@@ -270,22 +270,18 @@ namespace ProjectoSAD {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void studentsRowChangeEventHandler(object sender, studentsRowChangeEvent e);
+        public delegate void projectsRowChangeEventHandler(object sender, projectsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class studentsDataTable : global::System.Data.TypedTableBase<studentsRow> {
+        public partial class projectsDataTable : global::System.Data.TypedTableBase<projectsRow> {
             
             private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnname;
-            
-            private global::System.Data.DataColumn columnemail;
-            
-            private global::System.Data.DataColumn columnstudent_number;
             
             private global::System.Data.DataColumn columncreated_at;
             
@@ -293,8 +289,8 @@ namespace ProjectoSAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsDataTable() {
-                this.TableName = "students";
+            public projectsDataTable() {
+                this.TableName = "projects";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +298,7 @@ namespace ProjectoSAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal studentsDataTable(global::System.Data.DataTable table) {
+            internal projectsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,7 +315,7 @@ namespace ProjectoSAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected studentsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected projectsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -337,22 +333,6 @@ namespace ProjectoSAD {
             public global::System.Data.DataColumn nameColumn {
                 get {
                     return this.columnname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn emailColumn {
-                get {
-                    return this.columnemail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn student_numberColumn {
-                get {
-                    return this.columnstudent_number;
                 }
             }
             
@@ -383,57 +363,55 @@ namespace ProjectoSAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsRow this[int index] {
+            public projectsRow this[int index] {
                 get {
-                    return ((studentsRow)(this.Rows[index]));
+                    return ((projectsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event studentsRowChangeEventHandler studentsRowChanging;
+            public event projectsRowChangeEventHandler projectsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event studentsRowChangeEventHandler studentsRowChanged;
+            public event projectsRowChangeEventHandler projectsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event studentsRowChangeEventHandler studentsRowDeleting;
+            public event projectsRowChangeEventHandler projectsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event studentsRowChangeEventHandler studentsRowDeleted;
+            public event projectsRowChangeEventHandler projectsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddstudentsRow(studentsRow row) {
+            public void AddprojectsRow(projectsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsRow AddstudentsRow(long id, string name, string email, string student_number, System.DateTime created_at, System.DateTime updated_at) {
-                studentsRow rowstudentsRow = ((studentsRow)(this.NewRow()));
+            public projectsRow AddprojectsRow(long id, string name, System.DateTime created_at, System.DateTime updated_at) {
+                projectsRow rowprojectsRow = ((projectsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         name,
-                        email,
-                        student_number,
                         created_at,
                         updated_at};
-                rowstudentsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowstudentsRow);
-                return rowstudentsRow;
+                rowprojectsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowprojectsRow);
+                return rowprojectsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsRow FindByid(long id) {
-                return ((studentsRow)(this.Rows.Find(new object[] {
+            public projectsRow FindByid(long id) {
+                return ((projectsRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                studentsDataTable cln = ((studentsDataTable)(base.Clone()));
+                projectsDataTable cln = ((projectsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -441,7 +419,7 @@ namespace ProjectoSAD {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new studentsDataTable();
+                return new projectsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,8 +427,6 @@ namespace ProjectoSAD {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnname = base.Columns["name"];
-                this.columnemail = base.Columns["email"];
-                this.columnstudent_number = base.Columns["student_number"];
                 this.columncreated_at = base.Columns["created_at"];
                 this.columnupdated_at = base.Columns["updated_at"];
             }
@@ -462,10 +438,6 @@ namespace ProjectoSAD {
                 base.Columns.Add(this.columnid);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnemail);
-                this.columnstudent_number = new global::System.Data.DataColumn("student_number", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstudent_number);
                 this.columncreated_at = new global::System.Data.DataColumn("created_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_at);
                 this.columnupdated_at = new global::System.Data.DataColumn("updated_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -476,38 +448,34 @@ namespace ProjectoSAD {
                 this.columnid.Unique = true;
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 191;
-                this.columnemail.AllowDBNull = false;
-                this.columnemail.MaxLength = 191;
-                this.columnstudent_number.AllowDBNull = false;
-                this.columnstudent_number.MaxLength = 191;
                 this.columncreated_at.AllowDBNull = false;
                 this.columnupdated_at.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsRow NewstudentsRow() {
-                return ((studentsRow)(this.NewRow()));
+            public projectsRow NewprojectsRow() {
+                return ((projectsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new studentsRow(builder);
+                return new projectsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(studentsRow);
+                return typeof(projectsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.studentsRowChanged != null)) {
-                    this.studentsRowChanged(this, new studentsRowChangeEvent(((studentsRow)(e.Row)), e.Action));
+                if ((this.projectsRowChanged != null)) {
+                    this.projectsRowChanged(this, new projectsRowChangeEvent(((projectsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -515,8 +483,8 @@ namespace ProjectoSAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.studentsRowChanging != null)) {
-                    this.studentsRowChanging(this, new studentsRowChangeEvent(((studentsRow)(e.Row)), e.Action));
+                if ((this.projectsRowChanging != null)) {
+                    this.projectsRowChanging(this, new projectsRowChangeEvent(((projectsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -524,8 +492,8 @@ namespace ProjectoSAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.studentsRowDeleted != null)) {
-                    this.studentsRowDeleted(this, new studentsRowChangeEvent(((studentsRow)(e.Row)), e.Action));
+                if ((this.projectsRowDeleted != null)) {
+                    this.projectsRowDeleted(this, new projectsRowChangeEvent(((projectsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -533,14 +501,14 @@ namespace ProjectoSAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.studentsRowDeleting != null)) {
-                    this.studentsRowDeleting(this, new studentsRowChangeEvent(((studentsRow)(e.Row)), e.Action));
+                if ((this.projectsRowDeleting != null)) {
+                    this.projectsRowDeleting(this, new projectsRowChangeEvent(((projectsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovestudentsRow(studentsRow row) {
+            public void RemoveprojectsRow(projectsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -567,7 +535,7 @@ namespace ProjectoSAD {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "studentsDataTable";
+                attribute2.FixedValue = "projectsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -611,25 +579,25 @@ namespace ProjectoSAD {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class studentsRow : global::System.Data.DataRow {
+        public partial class projectsRow : global::System.Data.DataRow {
             
-            private studentsDataTable tablestudents;
+            private projectsDataTable tableprojects;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal studentsRow(global::System.Data.DataRowBuilder rb) : 
+            internal projectsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablestudents = ((studentsDataTable)(this.Table));
+                this.tableprojects = ((projectsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public long id {
                 get {
-                    return ((long)(this[this.tablestudents.idColumn]));
+                    return ((long)(this[this.tableprojects.idColumn]));
                 }
                 set {
-                    this[this.tablestudents.idColumn] = value;
+                    this[this.tableprojects.idColumn] = value;
                 }
             }
             
@@ -637,32 +605,10 @@ namespace ProjectoSAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string name {
                 get {
-                    return ((string)(this[this.tablestudents.nameColumn]));
+                    return ((string)(this[this.tableprojects.nameColumn]));
                 }
                 set {
-                    this[this.tablestudents.nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string email {
-                get {
-                    return ((string)(this[this.tablestudents.emailColumn]));
-                }
-                set {
-                    this[this.tablestudents.emailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string student_number {
-                get {
-                    return ((string)(this[this.tablestudents.student_numberColumn]));
-                }
-                set {
-                    this[this.tablestudents.student_numberColumn] = value;
+                    this[this.tableprojects.nameColumn] = value;
                 }
             }
             
@@ -670,10 +616,10 @@ namespace ProjectoSAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_at {
                 get {
-                    return ((global::System.DateTime)(this[this.tablestudents.created_atColumn]));
+                    return ((global::System.DateTime)(this[this.tableprojects.created_atColumn]));
                 }
                 set {
-                    this[this.tablestudents.created_atColumn] = value;
+                    this[this.tableprojects.created_atColumn] = value;
                 }
             }
             
@@ -681,10 +627,10 @@ namespace ProjectoSAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_at {
                 get {
-                    return ((global::System.DateTime)(this[this.tablestudents.updated_atColumn]));
+                    return ((global::System.DateTime)(this[this.tableprojects.updated_atColumn]));
                 }
                 set {
-                    this[this.tablestudents.updated_atColumn] = value;
+                    this[this.tableprojects.updated_atColumn] = value;
                 }
             }
         }
@@ -693,22 +639,22 @@ namespace ProjectoSAD {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class studentsRowChangeEvent : global::System.EventArgs {
+        public class projectsRowChangeEvent : global::System.EventArgs {
             
-            private studentsRow eventRow;
+            private projectsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsRowChangeEvent(studentsRow row, global::System.Data.DataRowAction action) {
+            public projectsRowChangeEvent(projectsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public studentsRow Row {
+            public projectsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -736,7 +682,7 @@ namespace ProjectoSAD.sad_dwfDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class studentsTableAdapter : global::System.ComponentModel.Component {
+    public partial class projectsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -750,7 +696,7 @@ namespace ProjectoSAD.sad_dwfDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public studentsTableAdapter() {
+        public projectsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -847,53 +793,43 @@ namespace ProjectoSAD.sad_dwfDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "students";
+            tableMapping.DataSetTable = "projects";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("email", "email");
-            tableMapping.ColumnMappings.Add("student_number", "student_number");
             tableMapping.ColumnMappings.Add("created_at", "created_at");
             tableMapping.ColumnMappings.Add("updated_at", "updated_at");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[students] WHERE (([id] = @Original_id) AND ([name] = @Original" +
-                "_name) AND ([email] = @Original_email) AND ([student_number] = @Original_student" +
-                "_number) AND ([created_at] = @Original_created_at) AND ([updated_at] = @Original" +
-                "_updated_at))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[projects] WHERE (([id] = @Original_id) AND ([name] = @Original" +
+                "_name) AND ([created_at] = @Original_created_at) AND ([updated_at] = @Original_u" +
+                "pdated_at))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[students] ([id], [name], [email], [student_number], [created_at], [updated_at]) VALUES (@id, @name, @email, @student_number, @created_at, @updated_at);
-SELECT id, name, email, student_number, created_at, updated_at FROM students WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[projects] ([id], [name], [created_at], [updated_at]) VALUES (@" +
+                "id, @name, @created_at, @updated_at);\r\nSELECT id, name, created_at, updated_at F" +
+                "ROM projects WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[students] SET [id] = @id, [name] = @name, [email] = @email, [student_number] = @student_number, [created_at] = @created_at, [updated_at] = @updated_at WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([email] = @Original_email) AND ([student_number] = @Original_student_number) AND ([created_at] = @Original_created_at) AND ([updated_at] = @Original_updated_at));
-SELECT id, name, email, student_number, created_at, updated_at FROM students WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[projects] SET [id] = @id, [name] = @name, [created_at] = @created_at, [updated_at] = @updated_at WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([created_at] = @Original_created_at) AND ([updated_at] = @Original_updated_at));
+SELECT id, name, created_at, updated_at FROM projects WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@student_number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_student_number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "student_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -911,7 +847,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, name, email, student_number, created_at, updated_at FROM dbo.students";
+            this._commandCollection[0].CommandText = "SELECT id, name, created_at, updated_at FROM dbo.projects";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -919,7 +855,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(sad_dwfDataSet.studentsDataTable dataTable) {
+        public virtual int Fill(sad_dwfDataSet.projectsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -932,9 +868,9 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual sad_dwfDataSet.studentsDataTable GetData() {
+        public virtual sad_dwfDataSet.projectsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            sad_dwfDataSet.studentsDataTable dataTable = new sad_dwfDataSet.studentsDataTable();
+            sad_dwfDataSet.projectsDataTable dataTable = new sad_dwfDataSet.projectsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -942,7 +878,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sad_dwfDataSet.studentsDataTable dataTable) {
+        public virtual int Update(sad_dwfDataSet.projectsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -950,7 +886,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(sad_dwfDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "students");
+            return this.Adapter.Update(dataSet, "projects");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -972,7 +908,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_id, string Original_name, string Original_email, string Original_student_number, System.DateTime Original_created_at, System.DateTime Original_updated_at) {
+        public virtual int Delete(long Original_id, string Original_name, System.DateTime Original_created_at, System.DateTime Original_updated_at) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
@@ -980,20 +916,8 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_name));
             }
-            if ((Original_email == null)) {
-                throw new global::System.ArgumentNullException("Original_email");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_email));
-            }
-            if ((Original_student_number == null)) {
-                throw new global::System.ArgumentNullException("Original_student_number");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_student_number));
-            }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_created_at));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_updated_at));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_created_at));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_updated_at));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1014,7 +938,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long id, string name, string email, string student_number, System.DateTime created_at, System.DateTime updated_at) {
+        public virtual int Insert(long id, string name, System.DateTime created_at, System.DateTime updated_at) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(id));
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -1022,20 +946,8 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(name));
             }
-            if ((email == null)) {
-                throw new global::System.ArgumentNullException("email");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(email));
-            }
-            if ((student_number == null)) {
-                throw new global::System.ArgumentNullException("student_number");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(student_number));
-            }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(created_at));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(updated_at));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(created_at));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(updated_at));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1056,7 +968,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long id, string name, string email, string student_number, System.DateTime created_at, System.DateTime updated_at, long Original_id, string Original_name, string Original_email, string Original_student_number, System.DateTime Original_created_at, System.DateTime Original_updated_at) {
+        public virtual int Update(long id, string name, System.DateTime created_at, System.DateTime updated_at, long Original_id, string Original_name, System.DateTime Original_created_at, System.DateTime Original_updated_at) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(id));
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -1064,41 +976,17 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(name));
             }
-            if ((email == null)) {
-                throw new global::System.ArgumentNullException("email");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(email));
-            }
-            if ((student_number == null)) {
-                throw new global::System.ArgumentNullException("student_number");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(student_number));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(created_at));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(updated_at));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(created_at));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(updated_at));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_name));
             }
-            if ((Original_email == null)) {
-                throw new global::System.ArgumentNullException("Original_email");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_email));
-            }
-            if ((Original_student_number == null)) {
-                throw new global::System.ArgumentNullException("Original_student_number");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_student_number));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_created_at));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_updated_at));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_created_at));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_updated_at));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1119,8 +1007,8 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string email, string student_number, System.DateTime created_at, System.DateTime updated_at, long Original_id, string Original_name, string Original_email, string Original_student_number, System.DateTime Original_created_at, System.DateTime Original_updated_at) {
-            return this.Update(Original_id, name, email, student_number, created_at, updated_at, Original_id, Original_name, Original_email, Original_student_number, Original_created_at, Original_updated_at);
+        public virtual int Update(string name, System.DateTime created_at, System.DateTime updated_at, long Original_id, string Original_name, System.DateTime Original_created_at, System.DateTime Original_updated_at) {
+            return this.Update(Original_id, name, created_at, updated_at, Original_id, Original_name, Original_created_at, Original_updated_at);
         }
     }
     
@@ -1136,7 +1024,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         
         private UpdateOrderOption _updateOrder;
         
-        private studentsTableAdapter _studentsTableAdapter;
+        private projectsTableAdapter _projectsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1158,12 +1046,12 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public studentsTableAdapter studentsTableAdapter {
+        public projectsTableAdapter projectsTableAdapter {
             get {
-                return this._studentsTableAdapter;
+                return this._projectsTableAdapter;
             }
             set {
-                this._studentsTableAdapter = value;
+                this._projectsTableAdapter = value;
             }
         }
         
@@ -1186,9 +1074,9 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._studentsTableAdapter != null) 
-                            && (this._studentsTableAdapter.Connection != null))) {
-                    return this._studentsTableAdapter.Connection;
+                if (((this._projectsTableAdapter != null) 
+                            && (this._projectsTableAdapter.Connection != null))) {
+                    return this._projectsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1203,7 +1091,7 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._studentsTableAdapter != null)) {
+                if ((this._projectsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1217,12 +1105,12 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(sad_dwfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._studentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.students.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._projectsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.projects.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._studentsTableAdapter.Update(updatedRows));
+                    result = (result + this._projectsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1236,11 +1124,11 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(sad_dwfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._studentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.students.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._projectsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.projects.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._studentsTableAdapter.Update(addedRows));
+                    result = (result + this._projectsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1254,11 +1142,11 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(sad_dwfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._studentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.students.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._projectsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.projects.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._studentsTableAdapter.Update(deletedRows));
+                    result = (result + this._projectsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1301,8 +1189,8 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._studentsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._studentsTableAdapter.Connection) == false))) {
+            if (((this._projectsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._projectsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1338,13 +1226,13 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._studentsTableAdapter != null)) {
-                    revertConnections.Add(this._studentsTableAdapter, this._studentsTableAdapter.Connection);
-                    this._studentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._studentsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._studentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._studentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._studentsTableAdapter.Adapter);
+                if ((this._projectsTableAdapter != null)) {
+                    revertConnections.Add(this._projectsTableAdapter, this._projectsTableAdapter.Connection);
+                    this._projectsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._projectsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._projectsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._projectsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._projectsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1405,9 +1293,9 @@ SELECT id, name, email, student_number, created_at, updated_at FROM students WHE
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._studentsTableAdapter != null)) {
-                    this._studentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._studentsTableAdapter]));
-                    this._studentsTableAdapter.Transaction = null;
+                if ((this._projectsTableAdapter != null)) {
+                    this._projectsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._projectsTableAdapter]));
+                    this._projectsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
