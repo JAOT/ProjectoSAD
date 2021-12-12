@@ -1,4 +1,6 @@
 ﻿
+using ProjectoSAD.Data;
+
 namespace ProjectoSAD.Forms
 {
     partial class ListaEstudantes
@@ -38,9 +40,9 @@ namespace ProjectoSAD.Forms
             this.studentnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sad_dwfDataSet1 = new ProjectoSAD.sad_dwfDataSet1();
+            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsTableAdapter1 = new ProjectoSAD.sad_dwfDataSet1TableAdapters.studentsTableAdapter();
+            this.studentsTableAdapter1 = new ProjectoSAD.Data.sad_dwfDataSet1TableAdapters.studentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).BeginInit();
@@ -166,6 +168,6 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
         private sad_dwfDataSet1 sad_dwfDataSet1;
         private System.Windows.Forms.BindingSource studentsBindingSource1;
-        private sad_dwfDataSet1TableAdapters.studentsTableAdapter studentsTableAdapter1;
+        private Data.sad_dwfDataSet1TableAdapters.studentsTableAdapter studentsTableAdapter1;
     }
 }

@@ -13,11 +13,14 @@ using ProjectoSAD.Data;
 using System.Data.Linq;
 using System.Security.Cryptography;
 using System.IO;
+using ProjectoSAD.UserData;
 
 namespace ProjectoSAD
 {
     public partial class Principal : Form
     {
+        //Apontador para o utilizador actual
+        CurrentUser currentUser = new CurrentUser();
         public Principal()
         {
             InitializeComponent();
@@ -49,23 +52,34 @@ namespace ProjectoSAD
 
             SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
             user user = sad_dwf.users.Where(u => u.email == email).FirstOrDefault();
-            if (txtPassword.Text == DesencriptaPassword(user.password))
+            if (user!=null)
             {
-                var fname = user.fname;
-                var lname = user.lname;
+                if (txtPassword.Text == DesencriptaPassword(user.password))
+                {
+                    var fname = user.fname;
+                    var lname = user.lname;
 
-                MessageBox.Show("Bem-vindo " + fname + " " + lname);
-
-                ListaProjectos lp = new Forms.ListaProjectos();
-                lp.Show();
-                this.Hide();
+                    MessageBox.Show("Bem-vindo " + fname + " " + lname);
+                    currentUser = new CurrentUser
+                    {
+                        name = user.fname + " " + user.lname,
+                        phone = user.phone,
+                        password = user.password,
+                        type = sad_dwf.types.Where(r => r.id == user.type_id).FirstOrDefault()
+                    };
+                    ListaProjectos lp = new Forms.ListaProjectos();
+                    lp.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Utilizador ou password errados.\nPor favor, tentar de novo.");
+                }
             }
             else
             {
-                MessageBox.Show("Utilizador ou password errados.\nPor favor, tentar de novo.");
+                MessageBox.Show("Utilizador não existente ou não encontrado.");
             }
-
-
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
@@ -77,8 +91,10 @@ namespace ProjectoSAD
         {
             if (VerificaCamposVazios())
             {
+                //caso todos os campos estejam preenchidos, verificar na bdd se existem algum utilizador com o email indicado
                 SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
                 user user = sad_dwf.users.Where(u => u.email == txtEmailReg.Text).FirstOrDefault();
+                //se não houver, criar um novo
                 if (user == null)
                 {
                     user regUser = new user
@@ -98,10 +114,19 @@ namespace ProjectoSAD
                         to_be_logged_out = 1,
                         type_id = 1,
                         updated_at = DateTime.Now
-
                     };
                     sad_dwf.users.InsertOnSubmit(regUser);
                     sad_dwf.SubmitChanges();
+                    //limpar as caixas de texto e devolver o utilizador para a form de inicio de sessão
+                    txtFnome.Text = "";
+                    txtLNome.Text = "";
+                    txtTelemovel.Text = "";
+                    txtEmailReg.Text = "";
+                    txtRegPassword.Text = "";
+                    txtRegPasswordVer.Text = "";
+                    tabControl1.SelectedTab = tabPage1;
+                    MessageBox.Show("Utilizador registado.\nPor favor, faça login.");
+
                 }
                 else
                 {

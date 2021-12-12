@@ -1,4 +1,6 @@
 ﻿
+using ProjectoSAD.Data;
+
 namespace ProjectoSAD.Forms
 {
     partial class ListaProjectos
@@ -42,10 +44,10 @@ namespace ProjectoSAD.Forms
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sad_dwfDataSet = new ProjectoSAD.sad_dwfDataSet();
-            this.sad_dwfDataSet1 = new ProjectoSAD.sad_dwfDataSet1();
+            this.sad_dwfDataSet = new ProjectoSAD.Data.sad_dwfDataSet();
+            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.saddwfDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectsTableAdapter = new ProjectoSAD.sad_dwfDataSetTableAdapters.projectsTableAdapter();
+            this.projectsTableAdapter = new ProjectoSAD.Data.sad_dwfDataSetTableAdapters.projectsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
@@ -228,7 +230,7 @@ namespace ProjectoSAD.Forms
         private sad_dwfDataSet1 sad_dwfDataSet1;
         private sad_dwfDataSet sad_dwfDataSet;
         private System.Windows.Forms.BindingSource projectsBindingSource;
-        private sad_dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
+        private Data.sad_dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
