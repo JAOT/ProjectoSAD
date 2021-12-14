@@ -1,9 +1,13 @@
-﻿using ProjectoSAD.Data;
+﻿using CsvHelper;
+using ProjectoSAD.Data;
+using ProjectoSAD.Forms.InserirProjectos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +16,7 @@ using System.Windows.Forms;
 namespace ProjectoSAD.Forms
 {
     public partial class ListaProjectos : Form
-    {
+    {       
         public ListaProjectos()
         {
             InitializeComponent();
@@ -66,6 +70,61 @@ namespace ProjectoSAD.Forms
             }
             //a lista previamente criada torna-se no dataset apresentado.
             dataGridView1.DataSource = filtered;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InserirProjeto inserirProjecto = new InserirProjeto();
+            inserirProjecto.Show();
+            inserirProjecto.FormClosed += InserirProjecto_FormClosed;
+        }
+
+        private void InserirProjecto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
+        }
+
+        private void btmImportarListaProjectos_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Ficheiros CSV | *.csv";
+            openFileDialog.ShowDialog();
+            var resultado = openFileDialog.FileName;
+
+            if (resultado!="")
+            {
+                //criar uma nova lista de projectos vazia
+                List<project> listaProjectos;
+                try
+                {
+                    //ler todo o conteúdo de ficheiro, importando os registos dos projectos
+                    using (var reader = new StreamReader(resultado))
+                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+                    {
+
+                        listaProjectos = csv.GetRecords<project>().ToList();
+                    }
+                    //criação de uma ligação à base de dados
+                    SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+
+                    //preparar as entidades projecto para inserção na tabela
+                    foreach (var project in listaProjectos)
+                    {
+                        //campos com timestamp actual
+                        project.created_at = DateTime.Now;
+                        project.updated_at = DateTime.Now;
+                        sad_dwf.projects.InsertOnSubmit(project);
+                    }
+                    //inserir os registos na tabela
+                    sad_dwf.SubmitChanges();
+                    //actualizar o table adapter com os dados acabados de inserir
+                    this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro de ficheiro.");
+                }
+            }
         }
     }
 }

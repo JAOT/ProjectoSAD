@@ -45,13 +45,13 @@ namespace ProjectoSAD.Forms
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sad_dwfDataSet = new ProjectoSAD.Data.sad_dwfDataSet();
-            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.saddwfDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectsTableAdapter = new ProjectoSAD.Data.sad_dwfDataSetTableAdapters.projectsTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btmImportarListaProjectos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@ namespace ProjectoSAD.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 395);
+            this.label2.Location = new System.Drawing.Point(56, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(250, 32);
             this.label2.TabIndex = 4;
@@ -99,13 +99,14 @@ namespace ProjectoSAD.Forms
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(76, 430);
+            this.button2.Location = new System.Drawing.Point(40, 222);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(281, 76);
             this.button2.TabIndex = 5;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -176,25 +177,37 @@ namespace ProjectoSAD.Forms
             this.sad_dwfDataSet.DataSetName = "sad_dwfDataSet";
             this.sad_dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // sad_dwfDataSet1
-            // 
-            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet1";
-            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // saddwfDataSet1BindingSource
-            // 
-            this.saddwfDataSet1BindingSource.DataSource = this.sad_dwfDataSet1;
-            this.saddwfDataSet1BindingSource.Position = 0;
             // 
             // projectsTableAdapter
             // 
             this.projectsTableAdapter.ClearBeforeFill = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(90, 354);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Importar Lista de Projectos";
+            // 
+            // btmImportarListaProjectos
+            // 
+            this.btmImportarListaProjectos.Location = new System.Drawing.Point(43, 379);
+            this.btmImportarListaProjectos.Name = "btmImportarListaProjectos";
+            this.btmImportarListaProjectos.Size = new System.Drawing.Size(278, 77);
+            this.btmImportarListaProjectos.TabIndex = 9;
+            this.btmImportarListaProjectos.Text = "Abrir Lista";
+            this.btmImportarListaProjectos.UseVisualStyleBackColor = true;
+            this.btmImportarListaProjectos.Click += new System.EventHandler(this.btmImportarListaProjectos_Click);
             // 
             // ListaProjectos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 710);
+            this.Controls.Add(this.btmImportarListaProjectos);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -210,7 +223,6 @@ namespace ProjectoSAD.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,7 +239,6 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource saddwfDataSet1BindingSource;
-        private sad_dwfDataSet1 sad_dwfDataSet1;
         private sad_dwfDataSet sad_dwfDataSet;
         private System.Windows.Forms.BindingSource projectsBindingSource;
         private Data.sad_dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
@@ -235,5 +246,7 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btmImportarListaProjectos;
     }
 }

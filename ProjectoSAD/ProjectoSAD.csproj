@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\InserirProjectos\InserirProjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InserirProjectos\InserirProjeto.Designer.cs">
+      <DependentUpon>InserirProjeto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListaEstudantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,12 +133,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\sad_dwfDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UserData\CurrentUser.cs" />
+    <EmbeddedResource Include="Forms\InserirProjectos\InserirProjeto.resx">
+      <DependentUpon>InserirProjeto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListaEstudantes.resx">
       <DependentUpon>ListaEstudantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,17 +183,6 @@
     </None>
     <None Include="Data\sad_dwfDataSet.xss">
       <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet1.xsc">
-      <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sad_dwfDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\sad_dwfDataSet1.xss">
-      <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
