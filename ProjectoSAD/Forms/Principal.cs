@@ -14,6 +14,7 @@ using System.Data.Linq;
 using System.Security.Cryptography;
 using System.IO;
 using ProjectoSAD.UserData;
+using ProjectoSAD.Forms.Utilizadores;
 
 namespace ProjectoSAD
 {
@@ -278,6 +279,12 @@ namespace ProjectoSAD
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click_2(object sender, EventArgs e)
+        {
+            Login lp = new Forms.Utilizadores.Login();
+            lp.Show();
         }
     }
 }

@@ -11,14 +11,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace ProjectoSAD.Forms
 {
-    public partial class ListaEstudantes : Form
+    public partial class ListaEstudantes : MaterialForm
     {
+        readonly MaterialSkin.MaterialSkinManager materialskinmanger;
         public ListaEstudantes()
         {
             InitializeComponent();
+            materialskinmanger = MaterialSkinManager.Instance;
+            materialskinmanger.AddFormToManage(this);
+
         }
 
         private void Estudantes_Load(object sender, EventArgs e)

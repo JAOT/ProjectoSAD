@@ -1,4 +1,5 @@
 ﻿using ProjectoSAD.Data;
+using ProjectoSAD.Forms.Utilizadores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,6 +67,11 @@ namespace ProjectoSAD.Forms
             }
             //a lista previamente criada torna-se no dataset apresentado.
             dataGridView1.DataSource = filtered;
+        }
+
+        public static implicit operator ListaProjectos(Login v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

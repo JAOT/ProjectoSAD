@@ -40,17 +40,17 @@ namespace ProjectoSAD.Forms
             this.studentnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.studentsTableAdapter1 = new ProjectoSAD.Data.sad_dwfDataSet1TableAdapters.studentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImportar
             // 
-            this.btnImportar.Location = new System.Drawing.Point(12, 12);
+            this.btnImportar.Location = new System.Drawing.Point(655, 144);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(176, 45);
             this.btnImportar.TabIndex = 0;
@@ -83,6 +83,7 @@ namespace ProjectoSAD.Forms
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
@@ -125,33 +126,33 @@ namespace ProjectoSAD.Forms
             this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
             this.updatedatDataGridViewTextBoxColumn.Width = 125;
             // 
-            // sad_dwfDataSet1
-            // 
-            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet1";
-            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // studentsBindingSource1
             // 
             this.studentsBindingSource1.DataMember = "students";
             this.studentsBindingSource1.DataSource = this.sad_dwfDataSet1;
             // 
+            // sad_dwfDataSet1
+            // 
+            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet1";
+            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // studentsTableAdapter1
             // 
             this.studentsTableAdapter1.ClearBeforeFill = true;
             // 
-            // Estudantes
+            // ListaEstudantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 511);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnImportar);
-            this.Name = "Estudantes";
+            this.Name = "ListaEstudantes";
             this.Text = "Estudantes";
             this.Load += new System.EventHandler(this.Estudantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
