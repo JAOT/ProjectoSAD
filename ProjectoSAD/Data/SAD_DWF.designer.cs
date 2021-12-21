@@ -48,6 +48,12 @@ namespace ProjectoSAD.Data
     partial void Insertproject(project instance);
     partial void Updateproject(project instance);
     partial void Deleteproject(project instance);
+    partial void Insertattribute(attribute instance);
+    partial void Updateattribute(attribute instance);
+    partial void Deleteattribute(attribute instance);
+    partial void Insertattribute_weight(attribute_weight instance);
+    partial void Updateattribute_weight(attribute_weight instance);
+    partial void Deleteattribute_weight(attribute_weight instance);
     #endregion
 		
 		public SAD_DWFDataContext() : 
@@ -125,6 +131,22 @@ namespace ProjectoSAD.Data
 			get
 			{
 				return this.GetTable<project>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attribute> attributes
+		{
+			get
+			{
+				return this.GetTable<attribute>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attribute_weight> attribute_weights
+		{
+			get
+			{
+				return this.GetTable<attribute_weight>();
 			}
 		}
 	}
@@ -1500,6 +1522,8 @@ namespace ProjectoSAD.Data
 		
 		private System.Nullable<System.DateTime> _updated_at;
 		
+		private EntitySet<attribute> _attributes;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1516,6 +1540,7 @@ namespace ProjectoSAD.Data
 		
 		public project()
 		{
+			this._attributes = new EntitySet<attribute>(new Action<attribute>(this.attach_attributes), new Action<attribute>(this.detach_attributes));
 			OnCreated();
 		}
 		
@@ -1595,6 +1620,409 @@ namespace ProjectoSAD.Data
 					this._updated_at = value;
 					this.SendPropertyChanged("updated_at");
 					this.Onupdated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="project_attribute", Storage="_attributes", ThisKey="id", OtherKey="project_id")]
+		public EntitySet<attribute> attributes
+		{
+			get
+			{
+				return this._attributes;
+			}
+			set
+			{
+				this._attributes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_attributes(attribute entity)
+		{
+			this.SendPropertyChanging();
+			entity.project = this;
+		}
+		
+		private void detach_attributes(attribute entity)
+		{
+			this.SendPropertyChanging();
+			entity.project = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attributes")]
+	public partial class attribute : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private long _project_id;
+		
+		private string _name;
+		
+		private System.DateTime _created_at;
+		
+		private System.DateTime _updated_at;
+		
+		private EntitySet<attribute_weight> _attribute_weights;
+		
+		private EntityRef<project> _project;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void Onproject_idChanging(long value);
+    partial void Onproject_idChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Oncreated_atChanging(System.DateTime value);
+    partial void Oncreated_atChanged();
+    partial void Onupdated_atChanging(System.DateTime value);
+    partial void Onupdated_atChanged();
+    #endregion
+		
+		public attribute()
+		{
+			this._attribute_weights = new EntitySet<attribute_weight>(new Action<attribute_weight>(this.attach_attribute_weights), new Action<attribute_weight>(this.detach_attribute_weights));
+			this._project = default(EntityRef<project>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_project_id", DbType="BigInt NOT NULL")]
+		public long project_id
+		{
+			get
+			{
+				return this._project_id;
+			}
+			set
+			{
+				if ((this._project_id != value))
+				{
+					if (this._project.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onproject_idChanging(value);
+					this.SendPropertyChanging();
+					this._project_id = value;
+					this.SendPropertyChanged("project_id");
+					this.Onproject_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(191) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime NOT NULL")]
+		public System.DateTime created_at
+		{
+			get
+			{
+				return this._created_at;
+			}
+			set
+			{
+				if ((this._created_at != value))
+				{
+					this.Oncreated_atChanging(value);
+					this.SendPropertyChanging();
+					this._created_at = value;
+					this.SendPropertyChanged("created_at");
+					this.Oncreated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime NOT NULL")]
+		public System.DateTime updated_at
+		{
+			get
+			{
+				return this._updated_at;
+			}
+			set
+			{
+				if ((this._updated_at != value))
+				{
+					this.Onupdated_atChanging(value);
+					this.SendPropertyChanging();
+					this._updated_at = value;
+					this.SendPropertyChanged("updated_at");
+					this.Onupdated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attribute_attribute_weight", Storage="_attribute_weights", ThisKey="id", OtherKey="attribute_id")]
+		public EntitySet<attribute_weight> attribute_weights
+		{
+			get
+			{
+				return this._attribute_weights;
+			}
+			set
+			{
+				this._attribute_weights.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="project_attribute", Storage="_project", ThisKey="project_id", OtherKey="id", IsForeignKey=true)]
+		public project project
+		{
+			get
+			{
+				return this._project.Entity;
+			}
+			set
+			{
+				project previousValue = this._project.Entity;
+				if (((previousValue != value) 
+							|| (this._project.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._project.Entity = null;
+						previousValue.attributes.Remove(this);
+					}
+					this._project.Entity = value;
+					if ((value != null))
+					{
+						value.attributes.Add(this);
+						this._project_id = value.id;
+					}
+					else
+					{
+						this._project_id = default(long);
+					}
+					this.SendPropertyChanged("project");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_attribute_weights(attribute_weight entity)
+		{
+			this.SendPropertyChanging();
+			entity.attribute = this;
+		}
+		
+		private void detach_attribute_weights(attribute_weight entity)
+		{
+			this.SendPropertyChanging();
+			entity.attribute = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attribute_weight")]
+	public partial class attribute_weight : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private long _attribute_id;
+		
+		private int _weight;
+		
+		private EntityRef<attribute> _attribute;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void Onattribute_idChanging(long value);
+    partial void Onattribute_idChanged();
+    partial void OnweightChanging(int value);
+    partial void OnweightChanged();
+    #endregion
+		
+		public attribute_weight()
+		{
+			this._attribute = default(EntityRef<attribute>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attribute_id", DbType="BigInt NOT NULL")]
+		public long attribute_id
+		{
+			get
+			{
+				return this._attribute_id;
+			}
+			set
+			{
+				if ((this._attribute_id != value))
+				{
+					if (this._attribute.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onattribute_idChanging(value);
+					this.SendPropertyChanging();
+					this._attribute_id = value;
+					this.SendPropertyChanged("attribute_id");
+					this.Onattribute_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_weight", DbType="Int NOT NULL")]
+		public int weight
+		{
+			get
+			{
+				return this._weight;
+			}
+			set
+			{
+				if ((this._weight != value))
+				{
+					this.OnweightChanging(value);
+					this.SendPropertyChanging();
+					this._weight = value;
+					this.SendPropertyChanged("weight");
+					this.OnweightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attribute_attribute_weight", Storage="_attribute", ThisKey="attribute_id", OtherKey="id", IsForeignKey=true)]
+		public attribute attribute
+		{
+			get
+			{
+				return this._attribute.Entity;
+			}
+			set
+			{
+				attribute previousValue = this._attribute.Entity;
+				if (((previousValue != value) 
+							|| (this._attribute.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._attribute.Entity = null;
+						previousValue.attribute_weights.Remove(this);
+					}
+					this._attribute.Entity = value;
+					if ((value != null))
+					{
+						value.attribute_weights.Add(this);
+						this._attribute_id = value.id;
+					}
+					else
+					{
+						this._attribute_id = default(long);
+					}
+					this.SendPropertyChanged("attribute");
 				}
 			}
 		}
