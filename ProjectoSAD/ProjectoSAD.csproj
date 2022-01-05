@@ -99,21 +99,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Data\decisions_workflow.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>decisions_workflow.dbml</DependentUpon>
-=======
-    <Compile Include="Data\sad_dwfDataSet.cs">
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\InserirProjectos\InserirProjeto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InserirProjectos\InserirProjeto.Designer.cs">
-      <DependentUpon>InserirProjeto.cs</DependentUpon>
->>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
     </Compile>
     <Compile Include="Forms\ListaEstudantes.cs">
       <SubType>Form</SubType>
@@ -163,19 +152,6 @@
     <Compile Include="Models\WeightedAttribute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="Data\SAD_DWF.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SAD_DWF.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sad_dwfDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </Compile>
->>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
     <Compile Include="UserData\CurrentUser.cs" />
     <EmbeddedResource Include="Forms\InserirProjectos\InserirProjeto.resx">
       <DependentUpon>InserirProjeto.cs</DependentUpon>
@@ -198,7 +174,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <None Include="Data\decisions_workflow.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>decisions_workflow.designer.cs</LastGenOutput>
@@ -206,14 +181,6 @@
     </None>
     <None Include="Data\decisions_workflow.dbml.layout">
       <DependentUpon>decisions_workflow.dbml</DependentUpon>
-=======
-    <EntityDeploy Include="Models\SADDWF.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SADDWF.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\SADDWF.edmx.diagram">
-      <DependentUpon>SADDWF.edmx</DependentUpon>
->>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -225,28 +192,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-<<<<<<< HEAD
-=======
-    <None Include="Data\SAD_DWF.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>SAD_DWF.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\SAD_DWF.dbml.layout">
-      <DependentUpon>SAD_DWF.dbml</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet.xsc">
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sad_dwfDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\sad_dwfDataSet.xss">
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </None>
->>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
