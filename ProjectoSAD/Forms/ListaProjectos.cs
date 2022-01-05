@@ -27,7 +27,7 @@ namespace ProjectoSAD.Forms
         {
 
             // TODO: This line of code loads data into the 'sad_dwfDataSet.projects' table. You can move, or remove it, as needed.
-            this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
+            this.projectsTableAdapter.Fill(this.dwfDataSet.projects);
         }
 
         private void ListaProjectos_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,11 +49,11 @@ namespace ProjectoSAD.Forms
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //A cada caractere inserido na caixa de texto, são filtrados os nomes dos projectos existentes em sistema
-            SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+            dwfDataContext dwf = new dwfDataContext();
             //criação de nova lista vazia
             List<project> filtered = new List<project>();
             //recolha dos projectos existentes na base de dados
-            List<project> projectos = sad_dwf.projects.ToList();
+            List<project> projectos = dwf.projects.ToList();
 
             //iteração pela lista de projectos recolhida
             foreach (var item in projectos)
@@ -83,7 +83,7 @@ namespace ProjectoSAD.Forms
 
         private void InserirProjecto_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
+            this.projectsTableAdapter.Fill(this.dwfDataSet.projects);
         }
 
         private void btmImportarListaProjectos_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace ProjectoSAD.Forms
                         listaProjectos = csv.GetRecords<project>().ToList();
                     }
                     //criação de uma ligação à base de dados
-                    SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+                    dwfDataContext dwf = new dwfDataContext();
 
                     //preparar as entidades projecto para inserção na tabela
                     foreach (var project in listaProjectos)
@@ -115,12 +115,12 @@ namespace ProjectoSAD.Forms
                         //campos com timestamp actual
                         project.created_at = DateTime.Now;
                         project.updated_at = DateTime.Now;
-                        sad_dwf.projects.InsertOnSubmit(project);
+                        dwf.projects.InsertOnSubmit(project);
                     }
                     //inserir os registos na tabela
-                    sad_dwf.SubmitChanges();
+                    dwf.SubmitChanges();
                     //actualizar o table adapter com os dados acabados de inserir
-                    this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
+                    this.projectsTableAdapter.Fill(this.dwfDataSet.projects);
                 }
                 catch (Exception)
                 {
@@ -137,10 +137,10 @@ namespace ProjectoSAD.Forms
             int projectoID = 0;
             bool res = int.TryParse(pID, out projectoID);
 
-            SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+            dwfDataContext dwf = new dwfDataContext();
             List<attribute> filtered = new List<attribute>();
             //recolha dos projectos existentes na base de dados
-            List<attribute> attributes = sad_dwf.attributes.Where(a => a.project_id == projectoID).ToList();
+            List<attribute> attributes = dwf.attributes.Where(a => a.project_id == projectoID).ToList();
             List<WeightedAttribute> wAttributes = new List<WeightedAttribute>();
 
             foreach (var att in attributes)
@@ -150,7 +150,7 @@ namespace ProjectoSAD.Forms
                     attributeID = att.id,
                     projectoID = att.project_id,
                     name = att.name,
-                    weight = sad_dwf.attribute_weights.Where(w => w.attribute_id == att.id).FirstOrDefault().weight
+                    weight = att.weight
                 };
 
                 wAttributes.Add(wa);
@@ -161,9 +161,8 @@ namespace ProjectoSAD.Forms
             dgvAtributos.Columns["weight"].DisplayIndex = 1;
             dgvAtributos.Columns["projectoID"].DisplayIndex = 2;
             dgvAtributos.Columns["attributeID"].DisplayIndex = 3;
-
             dgvAtributos.Columns["attributeID"].Visible = false;
-            dgvAtributos.Columns["projectoID"].Visible = false;
+            //dgvAtributos.Columns["projectoID"].Visible = false;
 
         }
 
@@ -173,14 +172,17 @@ namespace ProjectoSAD.Forms
             //gravar nova info do atributo na bd (nome e weight)
             string name = dgvAtributos.Rows[e.RowIndex].Cells["name"].Value.ToString();
             string weight = dgvAtributos.Rows[e.RowIndex].Cells["weight"].Value.ToString();
+            string pID = dgvAtributos.Rows[e.RowIndex].Cells["projectoID"].Value.ToString();
+            int projectID = 0;
+            bool result = int.TryParse(pID, out projectID);
 
             string id = dgvAtributos.Rows[e.RowIndex].Cells["attributeID"].Value.ToString();
             int attributeID = 0;
             bool res = int.TryParse(id, out attributeID);
 
             //ligação à bd, e actualização dos campos de weight e name
-            SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
-            sad_dwf.attribute_weights.Where(a => a.id == attributeID).FirstOrDefault().weight = int.Parse(weight);
+            dwfDataContext sad_dwf = new dwfDataContext();
+            sad_dwf.attributes.Where(a => a.id == attributeID).FirstOrDefault().weight = int.Parse(weight);
             sad_dwf.attributes.Where(a => a.id == attributeID).FirstOrDefault().name = name;
 
             sad_dwf.SubmitChanges();

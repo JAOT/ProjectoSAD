@@ -34,25 +34,27 @@ namespace ProjectoSAD.Forms
             this.components = new System.ComponentModel.Container();
             this.btnImportar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.student_attributeTableAdapter = new ProjectoSAD.Data.dwfDataSetTableAdapters.student_attributeTableAdapter();
+            this.studentsTableAdapter = new ProjectoSAD.Data.dwfDataSetTableAdapters.studentsTableAdapter();
+            this.dwfDataSet = new ProjectoSAD.Data.dwfDataSet();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sad_dwfDataSet = new ProjectoSAD.Data.sad_dwfDataSet();
-            this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsTableAdapter1 = new ProjectoSAD.Data.sad_dwfDataSetTableAdapters.studentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dwfDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImportar
             // 
-            this.btnImportar.Location = new System.Drawing.Point(12, 12);
+            this.btnImportar.Location = new System.Drawing.Point(9, 10);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(2);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(176, 45);
+            this.btnImportar.Size = new System.Drawing.Size(132, 37);
             this.btnImportar.TabIndex = 0;
             this.btnImportar.Text = "Importar Ficheiro de alunos";
             this.btnImportar.UseVisualStyleBackColor = true;
@@ -69,88 +71,84 @@ namespace ProjectoSAD.Forms
             this.studentnumberDataGridViewTextBoxColumn,
             this.createdatDataGridViewTextBoxColumn,
             this.updatedatDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.studentsBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
+            this.dataGridView1.DataSource = this.studentsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 51);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(874, 436);
+            this.dataGridView1.Size = new System.Drawing.Size(656, 354);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // student_attributeTableAdapter
+            // 
+            this.student_attributeTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentsTableAdapter
+            // 
+            this.studentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // dwfDataSet
+            // 
+            this.dwfDataSet.DataSetName = "dwfDataSet";
+            this.dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataMember = "students";
+            this.studentsBindingSource.DataSource = this.dwfDataSet;
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 125;
             // 
             // studentnumberDataGridViewTextBoxColumn
             // 
             this.studentnumberDataGridViewTextBoxColumn.DataPropertyName = "student_number";
             this.studentnumberDataGridViewTextBoxColumn.HeaderText = "student_number";
-            this.studentnumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.studentnumberDataGridViewTextBoxColumn.Name = "studentnumberDataGridViewTextBoxColumn";
-            this.studentnumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // createdatDataGridViewTextBoxColumn
             // 
             this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
             this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
-            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
-            this.createdatDataGridViewTextBoxColumn.Width = 125;
             // 
             // updatedatDataGridViewTextBoxColumn
             // 
             this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
             this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
-            this.updatedatDataGridViewTextBoxColumn.Width = 125;
             // 
-            // sad_dwfDataSet1
+            // ListaEstudantes
             // 
-            this.sad_dwfDataSet.DataSetName = "sad_dwfDataSet1";
-            this.sad_dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentsBindingSource1
-            // 
-            this.studentsBindingSource1.DataMember = "students";
-            this.studentsBindingSource1.DataSource = this.sad_dwfDataSet;
-            // 
-            // studentsTableAdapter1
-            // 
-            this.studentsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // Estudantes
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 511);
+            this.ClientSize = new System.Drawing.Size(671, 415);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnImportar);
-            this.Name = "Estudantes";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "ListaEstudantes";
             this.Text = "Estudantes";
             this.Load += new System.EventHandler(this.Estudantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dwfDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,14 +157,15 @@ namespace ProjectoSAD.Forms
 
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Data.dwfDataSetTableAdapters.student_attributeTableAdapter student_attributeTableAdapter;
+        private Data.dwfDataSetTableAdapters.studentsTableAdapter studentsTableAdapter;
+        private dwfDataSet dwfDataSet;
+        private System.Windows.Forms.BindingSource studentsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
-        private sad_dwfDataSet sad_dwfDataSet;
-        private System.Windows.Forms.BindingSource studentsBindingSource1;
-        private Data.sad_dwfDataSetTableAdapters.studentsTableAdapter studentsTableAdapter1;
     }
 }

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13" name="dwf">
+  <DataContextMoniker Name="/dwfDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cec02f67-9b29-4bbf-b6a7-3e4c3ebb1474" absoluteBounds="3.5, 7.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dwfDataContext/attribute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="984fea2a-034d-42f3-8c6e-b01b5768c180" absoluteBounds="3.515, 8.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc6793fe-e591-4734-a3fb-96175d73d7a9" absoluteBounds="0.75, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dwfDataContext/project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1679f28-e304-4e02-a095-38468ac3005f" absoluteBounds="0.765, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="40a331a9-0e93-4e43-a141-904d39dcd944" absoluteBounds="1.5, 11, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/dwfDataContext/role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be4d75fc-6420-4416-9d4b-273fd3a365c1" absoluteBounds="1.5150000000000001, 11.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05e5a6d5-f1a9-40f6-bb9b-f99039c671a9" absoluteBounds="6.25, 7.625, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dwfDataContext/student_attribute" />
+      <nestedChildShapes>
+        <elementListCompartment Id="daa4b132-89c1-4496-910e-9bef4c1398c7" absoluteBounds="6.265, 8.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4cf2b2ee-869d-483b-a387-b874881f8a93" absoluteBounds="3.5, 4.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dwfDataContext/student_project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5377e049-8db8-4212-9e9e-2887ceb07752" absoluteBounds="3.515, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6a53171-1155-4533-a4e5-5feeea7aa853" absoluteBounds="0.75, 0.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dwfDataContext/student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ea40dc2-5cb5-4993-bac8-b1a05bd48df5" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b14c8b38-226b-4737-8c10-24387f9f9346" absoluteBounds="0.75, 6.375, 2, 2.9247054036458318">
+      <DataClassMoniker Name="/dwfDataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3b6cc93-2c19-4c2b-b773-e1c0ce40012f" absoluteBounds="0.765, 6.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddea6ebe-4de3-4f4d-9eba-a6e02e775cd6" absoluteBounds="3.5, 2.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dwfDataContext/users_project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="842c3f4f-2649-47be-8193-d6857d216790" absoluteBounds="3.515, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.57859537760417); (3.125 : 5.95359537760417); (3.125 : 8.60659912109375); (3.5 : 8.60659912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/project/project_attribute" />
+      <nodes>
+        <classShapeMoniker Id="bc6793fe-e591-4734-a3fb-96175d73d7a9" />
+        <classShapeMoniker Id="cec02f67-9b29-4bbf-b6a7-3e4c3ebb1474" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.60659912109375); (6.25 : 8.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/attribute/attribute_student_attribute" />
+      <nodes>
+        <classShapeMoniker Id="cec02f67-9b29-4bbf-b6a7-3e4c3ebb1474" />
+        <classShapeMoniker Id="05e5a6d5-f1a9-40f6-bb9b-f99039c671a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.22916666666667 : 4.72199625651042 : JumpStart); (3.39583333333333 : 4.72199625651042 : JumpEnd); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/project/project_student_project" />
+      <nodes>
+        <classShapeMoniker Id="bc6793fe-e591-4734-a3fb-96175d73d7a9" />
+        <classShapeMoniker Id="4cf2b2ee-869d-483b-a387-b874881f8a93" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.40625); (7.25 : 1.40625); (7.25 : 7.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/student/student_student_attribute" />
+      <nodes>
+        <classShapeMoniker Id="c6a53171-1155-4533-a4e5-5feeea7aa853" />
+        <classShapeMoniker Id="05e5a6d5-f1a9-40f6-bb9b-f99039c671a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.7131982421875); (3.125 : 3.0881982421875); (3.125 : 4.39224612825521); (3.22916666666667 : 4.39224612825521 : JumpStart); (3.39583333333333 : 4.39224612825521 : JumpEnd); (3.5 : 4.39224612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/student/student_student_project" />
+      <nodes>
+        <classShapeMoniker Id="c6a53171-1155-4533-a4e5-5feeea7aa853" />
+        <classShapeMoniker Id="4cf2b2ee-869d-483b-a387-b874881f8a93" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 11); (2.125 : 9.29970540364583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/role/role_user" />
+      <nodes>
+        <classShapeMoniker Id="40a331a9-0e93-4e43-a141-904d39dcd944" />
+        <classShapeMoniker Id="b14c8b38-226b-4737-8c10-24387f9f9346" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.06314281510417); (3.06607443490112 : 3.74706838020305 : JumpStart); (3.18392556509888 : 3.62921725000529 : JumpEnd); (3.25357443490112 : 3.55956838020305 : JumpStart); (3.37142556509888 : 3.44171725000529 : JumpEnd); (3.4375 : 3.37564281510417); (3.4375 : 3.38149251302083); (3.5 : 3.31899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dwfDataContext/project/project_users_project" />
+      <nodes>
+        <classShapeMoniker Id="bc6793fe-e591-4734-a3fb-96175d73d7a9" />
+        <classShapeMoniker Id="ddea6ebe-4de3-4f4d-9eba-a6e02e775cd6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.43807592307692); (3.06607443490112 : 6.1220014881758 : JumpStart); (3.18392556509888 : 6.00415035797804 : JumpEnd); (3.3125 : 5.87557592307692); (3.3125 : 2.69074425651042); (3.5 : 2.69074425651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dwfDataContext/user/user_users_project" />
+      <nodes>
+        <classShapeMoniker Id="b14c8b38-226b-4737-8c10-24387f9f9346" />
+        <classShapeMoniker Id="ddea6ebe-4de3-4f4d-9eba-a6e02e775cd6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

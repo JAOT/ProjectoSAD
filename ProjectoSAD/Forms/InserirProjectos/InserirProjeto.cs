@@ -29,9 +29,9 @@ namespace ProjectoSAD.Forms.InserirProjectos
                     created_at = DateTime.Now,
                     updated_at = DateTime.Now
                 };
-                SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
-                sad_dwf.projects.InsertOnSubmit(newProject);
-                sad_dwf.SubmitChanges();
+                dwfDataContext dwf = new dwfDataContext();
+                dwf.projects.InsertOnSubmit(newProject);
+                dwf.SubmitChanges();
                 this.Close();
             }
             else

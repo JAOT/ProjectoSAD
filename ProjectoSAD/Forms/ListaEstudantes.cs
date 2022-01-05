@@ -24,7 +24,7 @@ namespace ProjectoSAD.Forms
         private void Estudantes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sad_dwfDataSet1.students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter1.Fill(this.sad_dwfDataSet.students);
+            this.studentsTableAdapter.Fill(this.dwfDataSet.students);
         }
 
         //importar csv
@@ -51,7 +51,7 @@ namespace ProjectoSAD.Forms
                         listaEstudantes = csv.GetRecords<student>().ToList();
                     }
                     //criação de uma ligação à base de dados
-                    SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+                    dwfDataContext dwf = new dwfDataContext();
 
                     //preparar as entidades aluno para inserção na tabela
                     foreach (var estudante in listaEstudantes)
@@ -59,12 +59,12 @@ namespace ProjectoSAD.Forms
                         //campos com timestamp actual
                         estudante.created_at = DateTime.Now;
                         estudante.updated_at = DateTime.Now;
-                        sad_dwf.students.InsertOnSubmit(estudante);
+                        dwf.students.InsertOnSubmit(estudante);
                     }
                     //inserir os registos na tabela
-                    sad_dwf.SubmitChanges();
+                    dwf.SubmitChanges();
                     //actualizar o tale adapter com os dados acabados de inserir
-                    this.studentsTableAdapter1.Fill(this.sad_dwfDataSet.students);
+                    this.studentsTableAdapter.Fill(this.dwfDataSet.students);
                 }
                 catch (Exception)
                 {
