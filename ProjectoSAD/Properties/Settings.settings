@@ -21,10 +21,33 @@
     <Setting Name="decisions_workflowConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+<<<<<<< HEAD
   &lt;ConnectionString&gt;Data Source=DESKTOP\SQLEXPRESS02;Initial Catalog=decisions_workflow;User ID=dwf;Password=123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP\SQLEXPRESS02;Initial Catalog=decisions_workflow;User ID=dwf;Password=123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False</Value>
+=======
+  &lt;ConnectionString&gt;Data Source=(localdb)\mssqllocaldb;Initial Catalog=decisions_workflow;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(localdb)\mssqllocaldb;Initial Catalog=decisions_workflow;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="decisions_workflowConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=(localdb)\mssqllocaldb;Initial Catalog=decisions_workflow;Persist Security Info=True;User ID=guest&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(localdb)\mssqllocaldb;Initial Catalog=decisions_workflow;Persist Security Info=True;User ID=guest</Value>
+    </Setting>
+    <Setting Name="decisions_workflowConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=DESKTOP\SQLEXPRESS02;Initial Catalog=decisions_workflow;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DESKTOP\SQLEXPRESS02;Initial Catalog=decisions_workflow;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False</Value>
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
     </Setting>
   </Settings>
 </SettingsFile>

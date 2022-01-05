@@ -12,6 +12,10 @@ namespace ProjectoSAD.UserData
         public string name { get; internal set; }
         public string phone { get; internal set; }
         public string password { get; internal set; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
         public role role { get; internal set; }
     }
 }

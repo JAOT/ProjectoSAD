@@ -24,7 +24,15 @@ namespace ProjectoSAD.Forms
         private void Estudantes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sad_dwfDataSet1.students' table. You can move, or remove it, as needed.
+<<<<<<< HEAD
             this.studentsTableAdapter.Fill(this.dwfDataSet.students);
+=======
+<<<<<<< HEAD
+            //this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
+=======
+            this.studentsTableAdapter1.Fill(this.sad_dwfDataSet.students);
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
         }
 
         //importar csv
@@ -44,6 +52,12 @@ namespace ProjectoSAD.Forms
                 List<student> listaEstudantes;
                 try
                 {
+<<<<<<< HEAD
+                    listaEstudantes = csv.GetRecords<student>().ToList();
+                }
+                //criação de uma ligação à base de dados
+                decisions_workflowDataContext sad_dwf = new decisions_workflowDataContext();
+=======
                     //ler todo o conteúdo de ficheiro, importando os registos dos alunos
                     using (var reader = new StreamReader(fich))
                     using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -51,7 +65,12 @@ namespace ProjectoSAD.Forms
                         listaEstudantes = csv.GetRecords<student>().ToList();
                     }
                     //criação de uma ligação à base de dados
+<<<<<<< HEAD
                     dwfDataContext dwf = new dwfDataContext();
+=======
+                    SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
 
                     //preparar as entidades aluno para inserção na tabela
                     foreach (var estudante in listaEstudantes)
@@ -71,7 +90,14 @@ namespace ProjectoSAD.Forms
 
                     MessageBox.Show("Erro de ficheiro");
                 }
+<<<<<<< HEAD
+                //inserir os registos na tabela
+                sad_dwf.SubmitChanges();
+                //actualizar o tale adapter com os dados acabados de inserir
+                //this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
+=======
 
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
 
             }
         }

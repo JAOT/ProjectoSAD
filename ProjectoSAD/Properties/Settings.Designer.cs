@@ -48,12 +48,42 @@ namespace ProjectoSAD.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP\\SQLEXPRESS02;Initial Catalog=decisions_workflow;User ID=dwf;P" +
             "assword=123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=decisions_workflow;Integrated " +
+            "Security=True")]
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
         public string decisions_workflowConnectionString {
             get {
                 return ((string)(this["decisions_workflowConnectionString"]));
             }
         }
+<<<<<<< HEAD
+=======
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=decisions_workflow;Persist Sec" +
+            "urity Info=True;User ID=guest")]
+        public string decisions_workflowConnectionString1 {
+            get {
+                return ((string)(this["decisions_workflowConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP\\SQLEXPRESS02;Initial Catalog=decisions_workflow;Integrated Se" +
+            "curity=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string decisions_workflowConnectionString2 {
+            get {
+                return ((string)(this["decisions_workflowConnectionString2"]));
+            }
+        }
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
     }
 }

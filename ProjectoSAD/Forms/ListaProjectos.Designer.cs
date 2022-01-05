@@ -44,8 +44,18 @@ namespace ProjectoSAD.Forms
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+<<<<<<< HEAD
             this.dwfDataSet = new ProjectoSAD.Data.dwfDataSet();
             this.saddwfDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+=======
+<<<<<<< HEAD
+            this.saddwfDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
+=======
+            this.sad_dwfDataSet = new ProjectoSAD.Data.sad_dwfDataSet();
+            this.saddwfDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
             this.label3 = new System.Windows.Forms.Label();
             this.btmImportarListaProjectos = new System.Windows.Forms.Button();
             this.dgvAtributos = new System.Windows.Forms.DataGridView();
@@ -53,8 +63,14 @@ namespace ProjectoSAD.Forms
             this.projectsTableAdapter = new ProjectoSAD.Data.dwfDataSetTableAdapters.projectsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.dwfDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSetBindingSource)).BeginInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
+            ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).BeginInit();
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtributos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attributesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -183,15 +199,23 @@ namespace ProjectoSAD.Forms
             // projectsBindingSource
             // 
             this.projectsBindingSource.DataMember = "projects";
+<<<<<<< HEAD
             this.projectsBindingSource.DataSource = this.dwfDataSet;
+=======
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
             // 
             // dwfDataSet
             // 
+<<<<<<< HEAD
             this.dwfDataSet.DataSetName = "dwfDataSet";
             this.dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+=======
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
             // 
             // label3
             // 
+<<<<<<< HEAD
+=======
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(68, 288);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -212,6 +236,7 @@ namespace ProjectoSAD.Forms
             this.btmImportarListaProjectos.Click += new System.EventHandler(this.btmImportarListaProjectos_Click);
             // 
             // dgvAtributos
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
             // 
             this.dgvAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtributos.Location = new System.Drawing.Point(507, 180);
@@ -223,14 +248,26 @@ namespace ProjectoSAD.Forms
             this.dgvAtributos.TabIndex = 10;
             this.dgvAtributos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtributos_CellValueChanged);
             // 
+<<<<<<< HEAD
+            this.saddwfDataSet1BindingSource.Position = 0;
+=======
             // attributesBindingSource
             // 
             this.attributesBindingSource.DataMember = "attributes";
+<<<<<<< HEAD
             this.attributesBindingSource.DataSource = this.dwfDataSet;
+=======
+            this.attributesBindingSource.DataSource = this.sad_dwfDataSet1;
+            // 
+            // sad_dwfDataSet1
+            // 
+            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet";
+            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
             // 
             // projectsTableAdapter
             // 
-            this.projectsTableAdapter.ClearBeforeFill = true;
             // 
             // ListaProjectos
             // 
@@ -254,8 +291,16 @@ namespace ProjectoSAD.Forms
             this.Load += new System.EventHandler(this.ListaProjectos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.dwfDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSetBindingSource)).EndInit();
+=======
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).EndInit();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
+            ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).EndInit();
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtributos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attributesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -274,9 +319,16 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.DataGridView dgvProjectos;
         private System.Windows.Forms.BindingSource saddwfDataSetBindingSource;
         private System.Windows.Forms.BindingSource projectsBindingSource;
+<<<<<<< HEAD
         private Data.dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
+=======
+<<<<<<< HEAD
+=======
+        private Data.sad_dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
+>>>>>>> b866cbd04461876d339395fbf1d455f2682abfc4
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btmImportarListaProjectos;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
