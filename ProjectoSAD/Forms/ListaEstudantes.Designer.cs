@@ -40,8 +40,16 @@ namespace ProjectoSAD.Forms
             this.studentnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
             this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+=======
+            this.sad_dwfDataSet = new ProjectoSAD.Data.sad_dwfDataSet();
+            this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.studentsTableAdapter1 = new ProjectoSAD.Data.sad_dwfDataSetTableAdapters.studentsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,10 +132,19 @@ namespace ProjectoSAD.Forms
             // 
             // sad_dwfDataSet1
             // 
+<<<<<<< HEAD
+=======
+            this.sad_dwfDataSet.DataSetName = "sad_dwfDataSet1";
+            this.sad_dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
             // 
             // studentsBindingSource1
             // 
             this.studentsBindingSource1.DataMember = "students";
+<<<<<<< HEAD
+=======
+            this.studentsBindingSource1.DataSource = this.sad_dwfDataSet;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
             // 
             // studentsTableAdapter1
             // 
@@ -158,6 +175,12 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn studentnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
+<<<<<<< HEAD
         private System.Windows.Forms.BindingSource studentsBindingSource1;
+=======
+        private sad_dwfDataSet sad_dwfDataSet;
+        private System.Windows.Forms.BindingSource studentsBindingSource1;
+        private Data.sad_dwfDataSetTableAdapters.studentsTableAdapter studentsTableAdapter1;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8
     }
 }

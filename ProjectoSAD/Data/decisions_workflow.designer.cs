@@ -30,6 +30,7 @@ namespace ProjectoSAD.Data
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
     partial void Insertattribute(attribute instance);
     partial void Updateattribute(attribute instance);
     partial void Deleteattribute(attribute instance);
@@ -48,6 +49,32 @@ namespace ProjectoSAD.Data
     partial void Insertuser(user instance);
     partial void Updateuser(user instance);
     partial void Deleteuser(user instance);
+=======
+    partial void Insertuser(user instance);
+    partial void Updateuser(user instance);
+    partial void Deleteuser(user instance);
+    partial void Inserttype(type instance);
+    partial void Updatetype(type instance);
+    partial void Deletetype(type instance);
+    partial void Insertstudent(student instance);
+    partial void Updatestudent(student instance);
+    partial void Deletestudent(student instance);
+    partial void Insertrole(role instance);
+    partial void Updaterole(role instance);
+    partial void Deleterole(role instance);
+    partial void Insertpermission(permission instance);
+    partial void Updatepermission(permission instance);
+    partial void Deletepermission(permission instance);
+    partial void Insertproject(project instance);
+    partial void Updateproject(project instance);
+    partial void Deleteproject(project instance);
+    partial void Insertattribute(attribute instance);
+    partial void Updateattribute(attribute instance);
+    partial void Deleteattribute(attribute instance);
+    partial void Insertattribute_weight(attribute_weight instance);
+    partial void Updateattribute_weight(attribute_weight instance);
+    partial void Deleteattribute_weight(attribute_weight instance);
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
     #endregion
 		
 		public decisions_workflowDataContext() : 
@@ -112,6 +139,7 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		public System.Data.Linq.Table<student_project> student_projects
 		{
 			get
@@ -141,6 +169,45 @@ namespace ProjectoSAD.Data
 			get
 			{
 				return this.GetTable<users_project>();
+=======
+		public System.Data.Linq.Table<role> roles
+		{
+			get
+			{
+				return this.GetTable<role>();
+			}
+		}
+		
+		public System.Data.Linq.Table<permission> permissions
+		{
+			get
+			{
+				return this.GetTable<permission>();
+			}
+		}
+		
+		public System.Data.Linq.Table<project> projects
+		{
+			get
+			{
+				return this.GetTable<project>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attribute> attributes
+		{
+			get
+			{
+				return this.GetTable<attribute>();
+			}
+		}
+		
+		public System.Data.Linq.Table<attribute_weight> attribute_weights
+		{
+			get
+			{
+				return this.GetTable<attribute_weight>();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 			}
 		}
 	}
@@ -1008,12 +1075,18 @@ namespace ProjectoSAD.Data
 		}
 	}
 	
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.student_project")]
 	public partial class student_project
+=======
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.roles")]
+	public partial class role : INotifyPropertyChanging, INotifyPropertyChanged
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 	{
 		
 		private int _project_id;
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		private int _student_id;
 		
 		public student_project()
@@ -1022,6 +1095,42 @@ namespace ProjectoSAD.Data
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_project_id", DbType="Int NOT NULL")]
 		public int project_id
+=======
+		private long _type_id;
+		
+		private string _name;
+		
+		private System.DateTime _created_at;
+		
+		private System.DateTime _updated_at;
+		
+		private EntityRef<type> _type;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void Ontype_idChanging(long value);
+    partial void Ontype_idChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Oncreated_atChanging(System.DateTime value);
+    partial void Oncreated_atChanged();
+    partial void Onupdated_atChanging(System.DateTime value);
+    partial void Onupdated_atChanged();
+    #endregion
+		
+		public role()
+		{
+			this._type = default(EntityRef<type>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		public long id
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		{
 			get
 			{
@@ -1029,7 +1138,75 @@ namespace ProjectoSAD.Data
 			}
 			set
 			{
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 				if ((this._project_id != value))
+=======
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type_id", DbType="BigInt NOT NULL")]
+		public long type_id
+		{
+			get
+			{
+				return this._type_id;
+			}
+			set
+			{
+				if ((this._type_id != value))
+				{
+					if (this._type.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ontype_idChanging(value);
+					this.SendPropertyChanging();
+					this._type_id = value;
+					this.SendPropertyChanged("type_id");
+					this.Ontype_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(191) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime NOT NULL")]
+		public System.DateTime created_at
+		{
+			get
+			{
+				return this._created_at;
+			}
+			set
+			{
+				if ((this._created_at != value))
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				{
 					this._project_id = value;
 				}
@@ -1051,10 +1228,71 @@ namespace ProjectoSAD.Data
 				}
 			}
 		}
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.students")]
 	public partial class student : INotifyPropertyChanging, INotifyPropertyChanged
+=======
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_role", Storage="_type", ThisKey="type_id", OtherKey="id", IsForeignKey=true)]
+		public type type
+		{
+			get
+			{
+				return this._type.Entity;
+			}
+			set
+			{
+				type previousValue = this._type.Entity;
+				if (((previousValue != value) 
+							|| (this._type.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._type.Entity = null;
+						previousValue.roles.Remove(this);
+					}
+					this._type.Entity = value;
+					if ((value != null))
+					{
+						value.roles.Add(this);
+						this._type_id = value.id;
+					}
+					else
+					{
+						this._type_id = default(long);
+					}
+					this.SendPropertyChanged("type");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.permissions")]
+	public partial class permission : INotifyPropertyChanging, INotifyPropertyChanged
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1063,7 +1301,17 @@ namespace ProjectoSAD.Data
 		
 		private string _name;
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		private string _email;
+=======
+		private string _description;
+		
+		private int _sort;
+		
+		private long _parent_id;
+		
+		private System.DateTime _created_at;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		
 		private string _student_number;
 		
@@ -1081,17 +1329,31 @@ namespace ProjectoSAD.Data
     partial void OnidChanged();
     partial void OnnameChanging(string value);
     partial void OnnameChanged();
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
     partial void OnemailChanging(string value);
     partial void OnemailChanged();
     partial void Onstudent_numberChanging(string value);
     partial void Onstudent_numberChanged();
     partial void Oncreated_atChanging(System.Nullable<System.DateTime> value);
+=======
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnsortChanging(int value);
+    partial void OnsortChanged();
+    partial void Onparent_idChanging(long value);
+    partial void Onparent_idChanged();
+    partial void Oncreated_atChanging(System.DateTime value);
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
     partial void Oncreated_atChanged();
     partial void Onupdated_atChanging(System.Nullable<System.DateTime> value);
     partial void Onupdated_atChanged();
     #endregion
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		public student()
+=======
+		public permission()
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		{
 			this._student_attributes = new EntitySet<student_attribute>(new Action<student_attribute>(this.attach_student_attributes), new Action<student_attribute>(this.detach_student_attributes));
 			OnCreated();
@@ -1177,8 +1439,73 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime")]
 		public System.Nullable<System.DateTime> created_at
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="VarChar(191) NOT NULL", CanBeNull=false)]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sort", DbType="Int NOT NULL")]
+		public int sort
+		{
+			get
+			{
+				return this._sort;
+			}
+			set
+			{
+				if ((this._sort != value))
+				{
+					this.OnsortChanging(value);
+					this.SendPropertyChanging();
+					this._sort = value;
+					this.SendPropertyChanged("sort");
+					this.OnsortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_parent_id", DbType="BigInt NOT NULL")]
+		public long parent_id
+		{
+			get
+			{
+				return this._parent_id;
+			}
+			set
+			{
+				if ((this._parent_id != value))
+				{
+					this.Onparent_idChanging(value);
+					this.SendPropertyChanging();
+					this._parent_id = value;
+					this.SendPropertyChanged("parent_id");
+					this.Onparent_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime NOT NULL")]
+		public System.DateTime created_at
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		{
 			get
 			{
@@ -1217,8 +1544,13 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="student_student_attribute", Storage="_student_attributes", ThisKey="id", OtherKey="student_id")]
 		public EntitySet<student_attribute> student_attributes
+=======
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_permission", Storage="_type", ThisKey="type_id", OtherKey="id", IsForeignKey=true)]
+		public type type
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		{
 			get
 			{
@@ -1226,7 +1558,196 @@ namespace ProjectoSAD.Data
 			}
 			set
 			{
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 				this._student_attributes.Assign(value);
+=======
+				type previousValue = this._type.Entity;
+				if (((previousValue != value) 
+							|| (this._type.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._type.Entity = null;
+						previousValue.permissions.Remove(this);
+					}
+					this._type.Entity = value;
+					if ((value != null))
+					{
+						value.permissions.Add(this);
+						this._type_id = value.id;
+					}
+					else
+					{
+						this._type_id = default(long);
+					}
+					this.SendPropertyChanged("type");
+				}
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
+		
+		private void attach_student_attributes(student_attribute entity)
+		{
+			this.SendPropertyChanging();
+			entity.student = this;
+		}
+		
+		private void detach_student_attributes(student_attribute entity)
+		{
+			this.SendPropertyChanging();
+			entity.student = null;
+=======
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.projects")]
+	public partial class project : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private string _name;
+		
+		private System.Nullable<System.DateTime> _created_at;
+		
+		private System.Nullable<System.DateTime> _updated_at;
+		
+		private EntitySet<attribute> _attributes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Oncreated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Oncreated_atChanged();
+    partial void Onupdated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Onupdated_atChanged();
+    #endregion
+		
+		public project()
+		{
+			this._attributes = new EntitySet<attribute>(new Action<attribute>(this.attach_attributes), new Action<attribute>(this.detach_attributes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(191) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> created_at
+		{
+			get
+			{
+				return this._created_at;
+			}
+			set
+			{
+				if ((this._created_at != value))
+				{
+					this.Oncreated_atChanging(value);
+					this.SendPropertyChanging();
+					this._created_at = value;
+					this.SendPropertyChanged("created_at");
+					this.Oncreated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> updated_at
+		{
+			get
+			{
+				return this._updated_at;
+			}
+			set
+			{
+				if ((this._updated_at != value))
+				{
+					this.Onupdated_atChanging(value);
+					this.SendPropertyChanging();
+					this._updated_at = value;
+					this.SendPropertyChanged("updated_at");
+					this.Onupdated_atChanged();
+				}
+			}
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="project_attribute", Storage="_attributes", ThisKey="id", OtherKey="project_id")]
+		public EntitySet<attribute> attributes
+		{
+			get
+			{
+				return this._attributes;
+			}
+			set
+			{
+				this._attributes.Assign(value);
 			}
 		}
 		
@@ -1250,31 +1771,41 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
-		private void attach_student_attributes(student_attribute entity)
+		private void attach_attributes(attribute entity)
 		{
 			this.SendPropertyChanging();
-			entity.student = this;
+			entity.project = this;
 		}
 		
-		private void detach_student_attributes(student_attribute entity)
+		private void detach_attributes(attribute entity)
 		{
 			this.SendPropertyChanging();
-			entity.student = null;
+			entity.project = null;
 		}
 	}
 	
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.users")]
 	public partial class user : INotifyPropertyChanging, INotifyPropertyChanged
+=======
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attributes")]
+	public partial class attribute : INotifyPropertyChanging, INotifyPropertyChanged
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		private string _token;
+=======
+		private long _project_id;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		
 		private System.DateTime _created_at;
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		private int _role_id;
 		
 		private string _fname;
@@ -1282,6 +1813,9 @@ namespace ProjectoSAD.Data
 		private string _lname;
 		
 		private string _phone;
+=======
+		private System.DateTime _created_at;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		
 		private string _email;
 		
@@ -1291,7 +1825,13 @@ namespace ProjectoSAD.Data
 		
 		private System.Nullable<System.DateTime> _updated_at;
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		private EntityRef<role> _role;
+=======
+		private EntitySet<attribute_weight> _attribute_weights;
+		
+		private EntityRef<project> _project;
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1299,8 +1839,15 @@ namespace ProjectoSAD.Data
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
     partial void OntokenChanging(string value);
     partial void OntokenChanged();
+=======
+    partial void Onproject_idChanging(long value);
+    partial void Onproject_idChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
     partial void Oncreated_atChanging(System.DateTime value);
     partial void Oncreated_atChanged();
     partial void Onrole_idChanging(int value);
@@ -1321,9 +1868,16 @@ namespace ProjectoSAD.Data
     partial void Onupdated_atChanged();
     #endregion
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		public user()
 		{
 			this._role = default(EntityRef<role>);
+=======
+		public attribute()
+		{
+			this._attribute_weights = new EntitySet<attribute_weight>(new Action<attribute_weight>(this.attach_attribute_weights), new Action<attribute_weight>(this.detach_attribute_weights));
+			this._project = default(EntityRef<project>);
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 			OnCreated();
 		}
 		
@@ -1347,6 +1901,7 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_token", DbType="VarChar(255)")]
 		public string token
 		{
@@ -1407,6 +1962,28 @@ namespace ProjectoSAD.Data
 					this._role_id = value;
 					this.SendPropertyChanged("role_id");
 					this.Onrole_idChanged();
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_project_id", DbType="BigInt NOT NULL")]
+		public long project_id
+		{
+			get
+			{
+				return this._project_id;
+			}
+			set
+			{
+				if ((this._project_id != value))
+				{
+					if (this._project.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onproject_idChanging(value);
+					this.SendPropertyChanging();
+					this._project_id = value;
+					this.SendPropertyChanged("project_id");
+					this.Onproject_idChanged();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				}
 			}
 		}
@@ -1431,6 +2008,7 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lname", DbType="VarChar(255)")]
 		public string lname
 		{
@@ -1447,10 +2025,29 @@ namespace ProjectoSAD.Data
 					this._lname = value;
 					this.SendPropertyChanged("lname");
 					this.OnlnameChanged();
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime NOT NULL")]
+		public System.DateTime created_at
+		{
+			get
+			{
+				return this._created_at;
+			}
+			set
+			{
+				if ((this._created_at != value))
+				{
+					this.Oncreated_atChanging(value);
+					this.SendPropertyChanging();
+					this._created_at = value;
+					this.SendPropertyChanged("created_at");
+					this.Oncreated_atChanged();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				}
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(255)")]
 		public string phone
 		{
@@ -1467,10 +2064,29 @@ namespace ProjectoSAD.Data
 					this._phone = value;
 					this.SendPropertyChanged("phone");
 					this.OnphoneChanged();
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime NOT NULL")]
+		public System.DateTime updated_at
+		{
+			get
+			{
+				return this._updated_at;
+			}
+			set
+			{
+				if ((this._updated_at != value))
+				{
+					this.Onupdated_atChanging(value);
+					this.SendPropertyChanging();
+					this._updated_at = value;
+					this.SendPropertyChanged("updated_at");
+					this.Onupdated_atChanged();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				}
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string email
 		{
@@ -1487,10 +2103,56 @@ namespace ProjectoSAD.Data
 					this._email = value;
 					this.SendPropertyChanged("email");
 					this.OnemailChanged();
+=======
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attribute_attribute_weight", Storage="_attribute_weights", ThisKey="id", OtherKey="attribute_id")]
+		public EntitySet<attribute_weight> attribute_weights
+		{
+			get
+			{
+				return this._attribute_weights;
+			}
+			set
+			{
+				this._attribute_weights.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="project_attribute", Storage="_project", ThisKey="project_id", OtherKey="id", IsForeignKey=true)]
+		public project project
+		{
+			get
+			{
+				return this._project.Entity;
+			}
+			set
+			{
+				project previousValue = this._project.Entity;
+				if (((previousValue != value) 
+							|| (this._project.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._project.Entity = null;
+						previousValue.attributes.Remove(this);
+					}
+					this._project.Entity = value;
+					if ((value != null))
+					{
+						value.attributes.Add(this);
+						this._project_id = value.id;
+					}
+					else
+					{
+						this._project_id = default(long);
+					}
+					this.SendPropertyChanged("project");
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				}
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string password
 		{
@@ -1507,10 +2169,94 @@ namespace ProjectoSAD.Data
 					this._password = value;
 					this.SendPropertyChanged("password");
 					this.OnpasswordChanged();
+=======
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_attribute_weights(attribute_weight entity)
+		{
+			this.SendPropertyChanging();
+			entity.attribute = this;
+		}
+		
+		private void detach_attribute_weights(attribute_weight entity)
+		{
+			this.SendPropertyChanging();
+			entity.attribute = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.attribute_weight")]
+	public partial class attribute_weight : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private long _attribute_id;
+		
+		private int _weight;
+		
+		private EntityRef<attribute> _attribute;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void Onattribute_idChanging(long value);
+    partial void Onattribute_idChanged();
+    partial void OnweightChanging(int value);
+    partial void OnweightChanged();
+    #endregion
+		
+		public attribute_weight()
+		{
+			this._attribute = default(EntityRef<attribute>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				}
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active", DbType="Int NOT NULL")]
 		public int active
 		{
@@ -1533,24 +2279,33 @@ namespace ProjectoSAD.Data
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime2")]
 		public System.Nullable<System.DateTime> updated_at
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attribute_id", DbType="BigInt NOT NULL")]
+		public long attribute_id
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 		{
 			get
 			{
-				return this._updated_at;
+				return this._attribute_id;
 			}
 			set
 			{
-				if ((this._updated_at != value))
+				if ((this._attribute_id != value))
 				{
-					this.Onupdated_atChanging(value);
+					if (this._attribute.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onattribute_idChanging(value);
 					this.SendPropertyChanging();
-					this._updated_at = value;
-					this.SendPropertyChanged("updated_at");
-					this.Onupdated_atChanged();
+					this._attribute_id = value;
+					this.SendPropertyChanged("attribute_id");
+					this.Onattribute_idChanged();
 				}
 			}
 		}
 		
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="role_user", Storage="_role", ThisKey="role_id", OtherKey="id", IsForeignKey=true)]
 		public role role
 		{
@@ -1563,10 +2318,45 @@ namespace ProjectoSAD.Data
 				role previousValue = this._role.Entity;
 				if (((previousValue != value) 
 							|| (this._role.HasLoadedOrAssignedValue == false)))
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_weight", DbType="Int NOT NULL")]
+		public int weight
+		{
+			get
+			{
+				return this._weight;
+			}
+			set
+			{
+				if ((this._weight != value))
+				{
+					this.OnweightChanging(value);
+					this.SendPropertyChanging();
+					this._weight = value;
+					this.SendPropertyChanged("weight");
+					this.OnweightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attribute_attribute_weight", Storage="_attribute", ThisKey="attribute_id", OtherKey="id", IsForeignKey=true)]
+		public attribute attribute
+		{
+			get
+			{
+				return this._attribute.Entity;
+			}
+			set
+			{
+				attribute previousValue = this._attribute.Entity;
+				if (((previousValue != value) 
+							|| (this._attribute.HasLoadedOrAssignedValue == false)))
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
+<<<<<<< HEAD:ProjectoSAD/Data/decisions_workflow.designer.cs
 						this._role.Entity = null;
 						previousValue.users.Remove(this);
 					}
@@ -1581,6 +2371,22 @@ namespace ProjectoSAD.Data
 						this._role_id = default(int);
 					}
 					this.SendPropertyChanged("role");
+=======
+						this._attribute.Entity = null;
+						previousValue.attribute_weights.Remove(this);
+					}
+					this._attribute.Entity = value;
+					if ((value != null))
+					{
+						value.attribute_weights.Add(this);
+						this._attribute_id = value.id;
+					}
+					else
+					{
+						this._attribute_id = default(long);
+					}
+					this.SendPropertyChanged("attribute");
+>>>>>>> 135ed1dbde1f58ff005d66e75df9b7dc7d6786e8:ProjectoSAD/Data/SAD_DWF.designer.cs
 				}
 			}
 		}

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SadDWF" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="SadDWFContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Student_AtributesSet" EntityType="SadDWF.Student_Atributes" />
+          <EntitySet Name="AtributesSet" EntityType="SadDWF.Atributes" />
+          <EntitySet Name="ProjectsSet" EntityType="SadDWF.Projects" />
+          <AssociationSet Name="AtributesStudent_Atribute" Association="SadDWF.AtributesStudent_Atribute">
+            <End Role="Atributes" EntitySet="AtributesSet" />
+            <End Role="Student_Atribute" EntitySet="Student_AtributesSet" />
+          </AssociationSet>
+          <EntitySet Name="StudentSet" EntityType="SadDWF.Student" />
+          <AssociationSet Name="ProjectsStudent" Association="SadDWF.ProjectsStudent">
+            <End Role="Projects" EntitySet="ProjectsSet" />
+            <End Role="Student" EntitySet="StudentSet" />
+          </AssociationSet>
+          <AssociationSet Name="Student_AtributesStudent" Association="SadDWF.Student_AtributesStudent">
+            <End Role="Student_Atributes" EntitySet="Student_AtributesSet" />
+            <End Role="Student" EntitySet="StudentSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectsAtributes" Association="SadDWF.ProjectsAtributes">
+            <End Role="Projects" EntitySet="ProjectsSet" />
+            <End Role="Atributes" EntitySet="AtributesSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Student_Atributes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="AtributeValue" Type="String" Nullable="false" />
+          <NavigationProperty Name="Atributes" Relationship="SadDWF.AtributesStudent_Atribute" FromRole="Student_Atribute" ToRole="Atributes" />
+          <Property Name="AtributesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="SadDWF.Student_AtributesStudent" FromRole="Student_Atributes" ToRole="Student" />
+          <Property Name="Id" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Atributes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AtributeName" Type="String" Nullable="false" />
+          <Property Name="AtributeAbbr" Type="String" Nullable="false" />
+          <NavigationProperty Name="Student_Atribute" Relationship="SadDWF.AtributesStudent_Atribute" FromRole="Atributes" ToRole="Student_Atribute" />
+          <NavigationProperty Name="Projects" Relationship="SadDWF.ProjectsAtributes" FromRole="Atributes" ToRole="Projects" />
+          <Property Name="ProjectsId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="String" Nullable="false" />
+          <Property Name="ProjectDescription" Type="String" Nullable="false" />
+          <Property Name="CreatedAt" Type="String" Nullable="false" />
+          <Property Name="UpdatedAt" Type="String" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="SadDWF.ProjectsStudent" FromRole="Projects" ToRole="Student" />
+          <NavigationProperty Name="Atributes" Relationship="SadDWF.ProjectsAtributes" FromRole="Projects" ToRole="Atributes" />
+        </EntityType>
+        <Association Name="AtributesStudent_Atribute">
+          <End Type="SadDWF.Atributes" Role="Atributes" Multiplicity="1" />
+          <End Type="SadDWF.Student_Atributes" Role="Student_Atribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Atributes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student_Atribute">
+              <PropertyRef Name="AtributesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" Nullable="false" />
+          <Property Name="School" Type="String" Nullable="false" />
+          <Property Name="SchoolNumber" Type="String" Nullable="false" />
+          <Property Name="Contact" Type="String" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="SadDWF.ProjectsStudent" FromRole="Student" ToRole="Projects" />
+          <Property Name="ProjectsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Student_Atributes" Relationship="SadDWF.Student_AtributesStudent" FromRole="Student" ToRole="Student_Atributes" />
+        </EntityType>
+        <Association Name="ProjectsStudent">
+          <End Type="SadDWF.Projects" Role="Projects" Multiplicity="1" />
+          <End Type="SadDWF.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="ProjectsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Student_AtributesStudent">
+          <End Type="SadDWF.Student_Atributes" Role="Student_Atributes" Multiplicity="*" />
+          <End Type="SadDWF.Student" Role="Student" Multiplicity="1" />
+        </Association>
+        <Association Name="ProjectsAtributes">
+          <End Type="SadDWF.Projects" Role="Projects" Multiplicity="1" />
+          <End Type="SadDWF.Atributes" Role="Atributes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Atributes">
+              <PropertyRef Name="ProjectsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="SadDWFContainer" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
