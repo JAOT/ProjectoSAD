@@ -50,8 +50,9 @@ namespace ProjectoSAD
         {
             string email = txtName.Text;
 
-            SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
-            user user = sad_dwf.users.Where(u => u.email == email).FirstOrDefault();
+            //SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+            decisions_workflowDataContext decisions_Workflow = new decisions_workflowDataContext();
+            user user = decisions_Workflow.users.Where(u=> u.email == email).FirstOrDefault();
             if (user!=null)
             {
                 if (txtPassword.Text == DesencriptaPassword(user.password))
@@ -65,7 +66,7 @@ namespace ProjectoSAD
                         name = user.fname + " " + user.lname,
                         phone = user.phone,
                         password = user.password,
-                        type = sad_dwf.types.Where(r => r.id == user.type_id).FirstOrDefault()
+                        role = decisions_Workflow.roles.Where (r => r.id ==user.role_id).FirstOrDefault()
                     };
                     ListaProjectos lp = new Forms.ListaProjectos();
                     lp.Show();
@@ -92,8 +93,8 @@ namespace ProjectoSAD
             if (VerificaCamposVazios())
             {
                 //caso todos os campos estejam preenchidos, verificar na bdd se existem algum utilizador com o email indicado
-                SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
-                user user = sad_dwf.users.Where(u => u.email == txtEmailReg.Text).FirstOrDefault();
+                decisions_workflowDataContext decisions_Workflow = new decisions_workflowDataContext();
+                user user = decisions_Workflow.users.Where(u => u.email == txtEmailReg.Text).FirstOrDefault();
                 //se não houver, criar um novo
                 if (user == null)
                 {
@@ -102,21 +103,22 @@ namespace ProjectoSAD
                         active = 1,
                         created_at = DateTime.Now,
                         email = txtEmailReg.Text,
-                        email_verified_at = DateTime.Now,
+                        //email_verified_at = DateTime.Now,
+                        role_id = 3,
                         fname = txtFnome.Text,
                         lname = txtLNome.Text,
-                        last_login_at = DateTime.Now,
+                        //last_login_at = DateTime.Now,
                         password = EncriptaPassword(txtRegPassword.Text),
-                        password_changed_at = DateTime.Now,
+                        //password_changed_at = DateTime.Now,
                         phone = txtTelemovel.Text,
-                        remember_token = "",
-                        timezone = TimeZone.CurrentTimeZone.StandardName.ToString(),
-                        to_be_logged_out = 1,
-                        type_id = 1,
+                        //remember_token = "",
+                        //timezone = TimeZone.CurrentTimeZone.StandardName.ToString(),
+                        //to_be_logged_out = 1,
+                        //type_id = 1,
                         updated_at = DateTime.Now
                     };
-                    sad_dwf.users.InsertOnSubmit(regUser);
-                    sad_dwf.SubmitChanges();
+                    decisions_Workflow.users.InsertOnSubmit(regUser);
+                    decisions_Workflow.SubmitChanges();
                     //limpar as caixas de texto e devolver o utilizador para a form de inicio de sessão
                     txtFnome.Text = "";
                     txtLNome.Text = "";

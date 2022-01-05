@@ -24,7 +24,7 @@ namespace ProjectoSAD.Forms
         private void Estudantes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sad_dwfDataSet1.students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
+            //this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
         }
 
         //importar csv
@@ -50,7 +50,7 @@ namespace ProjectoSAD.Forms
                     listaEstudantes = csv.GetRecords<student>().ToList();
                 }
                 //criação de uma ligação à base de dados
-                SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+                decisions_workflowDataContext sad_dwf = new decisions_workflowDataContext();
 
                 //preparar as entidades aluno para inserção na tabela
                 foreach (var estudante in listaEstudantes)
@@ -63,7 +63,7 @@ namespace ProjectoSAD.Forms
                 //inserir os registos na tabela
                 sad_dwf.SubmitChanges();
                 //actualizar o tale adapter com os dados acabados de inserir
-                this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
+                //this.studentsTableAdapter1.Fill(this.sad_dwfDataSet1.students);
 
             }
         }

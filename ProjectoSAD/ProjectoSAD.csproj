@@ -97,6 +97,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\decisions_workflow.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>decisions_workflow.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ListaEstudantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,21 +122,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Data\SAD_DWF.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SAD_DWF.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sad_dwfDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sad_dwfDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UserData\CurrentUser.cs" />
     <EmbeddedResource Include="Forms\ListaEstudantes.resx">
       <DependentUpon>ListaEstudantes.cs</DependentUpon>
@@ -151,6 +141,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Data\decisions_workflow.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>decisions_workflow.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\decisions_workflow.dbml.layout">
+      <DependentUpon>decisions_workflow.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,36 +159,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Data\SAD_DWF.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>SAD_DWF.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\SAD_DWF.dbml.layout">
-      <DependentUpon>SAD_DWF.dbml</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet.xsc">
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sad_dwfDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\sad_dwfDataSet.xss">
-      <DependentUpon>sad_dwfDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet1.xsc">
-      <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Data\sad_dwfDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sad_dwfDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\sad_dwfDataSet1.xss">
-      <DependentUpon>sad_dwfDataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

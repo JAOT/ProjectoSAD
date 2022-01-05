@@ -40,11 +40,8 @@ namespace ProjectoSAD.Forms
             this.studentnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.studentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsTableAdapter1 = new ProjectoSAD.Data.sad_dwfDataSet1TableAdapters.studentsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,17 +124,13 @@ namespace ProjectoSAD.Forms
             // 
             // sad_dwfDataSet1
             // 
-            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet1";
-            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // studentsBindingSource1
             // 
             this.studentsBindingSource1.DataMember = "students";
-            this.studentsBindingSource1.DataSource = this.sad_dwfDataSet1;
             // 
             // studentsTableAdapter1
             // 
-            this.studentsTableAdapter1.ClearBeforeFill = true;
             // 
             // Estudantes
             // 
@@ -150,7 +143,6 @@ namespace ProjectoSAD.Forms
             this.Text = "Estudantes";
             this.Load += new System.EventHandler(this.Estudantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
@@ -166,8 +158,6 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn studentnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
-        private sad_dwfDataSet1 sad_dwfDataSet1;
         private System.Windows.Forms.BindingSource studentsBindingSource1;
-        private Data.sad_dwfDataSet1TableAdapters.studentsTableAdapter studentsTableAdapter1;
     }
 }

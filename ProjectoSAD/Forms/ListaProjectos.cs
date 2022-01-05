@@ -21,7 +21,7 @@ namespace ProjectoSAD.Forms
         private void ListaProjectos_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sad_dwfDataSet.projects' table. You can move, or remove it, as needed.
-            this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
+            //this.projectsTableAdapter.Fill(this.sad_dwfDataSet.projects);
         }
 
         private void ListaProjectos_FormClosing(object sender, FormClosingEventArgs e)
@@ -43,7 +43,7 @@ namespace ProjectoSAD.Forms
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             //A cada caractere inserido na caixa de texto, são filtrados os nomes dos projectos existentes em sistema
-            SAD_DWFDataContext sad_dwf = new SAD_DWFDataContext();
+            decisions_workflowDataContext sad_dwf = new decisions_workflowDataContext();
             //criação de nova lista vazia
             List<project> filtered = new List<project>();
             //recolha dos projectos existentes na base de dados

@@ -12,7 +12,7 @@ namespace ProjectoSAD.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.0.3.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -42,6 +42,39 @@ namespace ProjectoSAD.Properties {
         public string sad_dwfConnectionString {
             get {
                 return ((string)(this["sad_dwfConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=decisions_workflow;Integrated " +
+            "Security=True")]
+        public string decisions_workflowConnectionString {
+            get {
+                return ((string)(this["decisions_workflowConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=decisions_workflow;Persist Sec" +
+            "urity Info=True;User ID=guest")]
+        public string decisions_workflowConnectionString1 {
+            get {
+                return ((string)(this["decisions_workflowConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP\\SQLEXPRESS02;Initial Catalog=decisions_workflow;Integrated Se" +
+            "curity=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string decisions_workflowConnectionString2 {
+            get {
+                return ((string)(this["decisions_workflowConnectionString2"]));
             }
         }
     }

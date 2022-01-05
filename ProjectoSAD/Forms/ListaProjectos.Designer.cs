@@ -44,14 +44,9 @@ namespace ProjectoSAD.Forms
             this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sad_dwfDataSet = new ProjectoSAD.Data.sad_dwfDataSet();
-            this.sad_dwfDataSet1 = new ProjectoSAD.Data.sad_dwfDataSet1();
             this.saddwfDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectsTableAdapter = new ProjectoSAD.Data.sad_dwfDataSetTableAdapters.projectsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,26 +164,19 @@ namespace ProjectoSAD.Forms
             // projectsBindingSource
             // 
             this.projectsBindingSource.DataMember = "projects";
-            this.projectsBindingSource.DataSource = this.sad_dwfDataSet;
             // 
             // sad_dwfDataSet
             // 
-            this.sad_dwfDataSet.DataSetName = "sad_dwfDataSet";
-            this.sad_dwfDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sad_dwfDataSet1
             // 
-            this.sad_dwfDataSet1.DataSetName = "sad_dwfDataSet1";
-            this.sad_dwfDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // saddwfDataSet1BindingSource
             // 
-            this.saddwfDataSet1BindingSource.DataSource = this.sad_dwfDataSet1;
             this.saddwfDataSet1BindingSource.Position = 0;
             // 
             // projectsTableAdapter
             // 
-            this.projectsTableAdapter.ClearBeforeFill = true;
             // 
             // ListaProjectos
             // 
@@ -209,8 +197,6 @@ namespace ProjectoSAD.Forms
             this.Load += new System.EventHandler(this.ListaProjectos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projectsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sad_dwfDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saddwfDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,10 +213,7 @@ namespace ProjectoSAD.Forms
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource saddwfDataSet1BindingSource;
-        private sad_dwfDataSet1 sad_dwfDataSet1;
-        private sad_dwfDataSet sad_dwfDataSet;
         private System.Windows.Forms.BindingSource projectsBindingSource;
-        private Data.sad_dwfDataSetTableAdapters.projectsTableAdapter projectsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
