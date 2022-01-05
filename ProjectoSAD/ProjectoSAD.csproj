@@ -169,6 +169,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListaEstudantes.resx">
       <DependentUpon>ListaEstudantes.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListaProjectos.resx">
       <DependentUpon>ListaProjectos.cs</DependentUpon>
