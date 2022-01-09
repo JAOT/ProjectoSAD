@@ -277,8 +277,7 @@ namespace ProjectoSAD
 
         private void pictureBox2_Click_2(object sender, EventArgs e)
         {
-            var m = new Loading();
-            m.Show();
+
         }
     }
 }
