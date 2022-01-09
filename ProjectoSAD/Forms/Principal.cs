@@ -1,4 +1,5 @@
 ﻿using ProjectoSAD.Forms;
+using ProjectoSAD.Forms.Inicio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -272,6 +273,12 @@ namespace ProjectoSAD
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click_2(object sender, EventArgs e)
+        {
+            var m = new Loading();
+            m.Show();
         }
     }
 }

@@ -32,6 +32,12 @@ namespace ProjectoSAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtRegPasswordVer = new System.Windows.Forms.TextBox();
+            this.lblTelemovel = new System.Windows.Forms.Label();
+            this.txtTelemovel = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtLNome = new System.Windows.Forms.TextBox();
             this.btnRegistar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,12 +55,6 @@ namespace ProjectoSAD
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtLNome = new System.Windows.Forms.TextBox();
-            this.lblTelemovel = new System.Windows.Forms.Label();
-            this.txtTelemovel = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtRegPasswordVer = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -99,6 +99,67 @@ namespace ProjectoSAD
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Novo Registo";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(75, 358);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(204, 29);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Repeat Password";
+            // 
+            // txtRegPasswordVer
+            // 
+            this.txtRegPasswordVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegPasswordVer.Location = new System.Drawing.Point(80, 389);
+            this.txtRegPasswordVer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRegPasswordVer.Name = "txtRegPasswordVer";
+            this.txtRegPasswordVer.Size = new System.Drawing.Size(268, 34);
+            this.txtRegPasswordVer.TabIndex = 11;
+            this.txtRegPasswordVer.UseSystemPasswordChar = true;
+            // 
+            // lblTelemovel
+            // 
+            this.lblTelemovel.AutoSize = true;
+            this.lblTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelemovel.ForeColor = System.Drawing.Color.White;
+            this.lblTelemovel.Location = new System.Drawing.Point(75, 155);
+            this.lblTelemovel.Name = "lblTelemovel";
+            this.lblTelemovel.Size = new System.Drawing.Size(128, 29);
+            this.lblTelemovel.TabIndex = 10;
+            this.lblTelemovel.Text = "Telemóvel";
+            // 
+            // txtTelemovel
+            // 
+            this.txtTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelemovel.Location = new System.Drawing.Point(80, 186);
+            this.txtTelemovel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelemovel.Name = "txtTelemovel";
+            this.txtTelemovel.Size = new System.Drawing.Size(268, 34);
+            this.txtTelemovel.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(75, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(198, 29);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Nome de Familia";
+            // 
+            // txtLNome
+            // 
+            this.txtLNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLNome.Location = new System.Drawing.Point(80, 119);
+            this.txtLNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLNome.Name = "txtLNome";
+            this.txtLNome.Size = new System.Drawing.Size(268, 34);
+            this.txtLNome.TabIndex = 7;
             // 
             // btnRegistar
             // 
@@ -285,6 +346,7 @@ namespace ProjectoSAD
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_2);
             // 
             // pictureBox3
             // 
@@ -309,67 +371,6 @@ namespace ProjectoSAD
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(75, 88);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 29);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Nome de Familia";
-            // 
-            // txtLNome
-            // 
-            this.txtLNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLNome.Location = new System.Drawing.Point(80, 119);
-            this.txtLNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtLNome.Name = "txtLNome";
-            this.txtLNome.Size = new System.Drawing.Size(268, 34);
-            this.txtLNome.TabIndex = 7;
-            // 
-            // lblTelemovel
-            // 
-            this.lblTelemovel.AutoSize = true;
-            this.lblTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelemovel.ForeColor = System.Drawing.Color.White;
-            this.lblTelemovel.Location = new System.Drawing.Point(75, 155);
-            this.lblTelemovel.Name = "lblTelemovel";
-            this.lblTelemovel.Size = new System.Drawing.Size(128, 29);
-            this.lblTelemovel.TabIndex = 10;
-            this.lblTelemovel.Text = "Telemóvel";
-            // 
-            // txtTelemovel
-            // 
-            this.txtTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelemovel.Location = new System.Drawing.Point(80, 186);
-            this.txtTelemovel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTelemovel.Name = "txtTelemovel";
-            this.txtTelemovel.Size = new System.Drawing.Size(268, 34);
-            this.txtTelemovel.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(75, 358);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(204, 29);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Repeat Password";
-            // 
-            // txtRegPasswordVer
-            // 
-            this.txtRegPasswordVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegPasswordVer.Location = new System.Drawing.Point(80, 389);
-            this.txtRegPasswordVer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRegPasswordVer.Name = "txtRegPasswordVer";
-            this.txtRegPasswordVer.Size = new System.Drawing.Size(268, 34);
-            this.txtRegPasswordVer.TabIndex = 11;
-            this.txtRegPasswordVer.UseSystemPasswordChar = true;
             // 
             // Principal
             // 
