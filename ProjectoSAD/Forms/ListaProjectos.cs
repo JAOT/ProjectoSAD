@@ -41,7 +41,7 @@ namespace ProjectoSAD.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             //Apresentação da lista de estudantes já integrados
-            ListaEstudantes estudantes = new ListaEstudantes();
+            ListaEstudantes estudantes = new ListaEstudantes(3);
             estudantes.Show();
 
         }
@@ -162,7 +162,7 @@ namespace ProjectoSAD.Forms
             dgvAtributos.Columns["projectoID"].DisplayIndex = 2;
             dgvAtributos.Columns["attributeID"].DisplayIndex = 3;
             dgvAtributos.Columns["attributeID"].Visible = false;
-            //dgvAtributos.Columns["projectoID"].Visible = false;
+            dgvAtributos.Columns["projectoID"].Visible = false;
 
         }
 
@@ -186,6 +186,11 @@ namespace ProjectoSAD.Forms
             sad_dwf.attributes.Where(a => a.id == attributeID).FirstOrDefault().name = name;
 
             sad_dwf.SubmitChanges();
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }

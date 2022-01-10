@@ -11,13 +11,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjectoSAD.ManageProjects;
+
 
 namespace ProjectoSAD.Forms
 {
     public partial class ListaEstudantes : Form
     {
-        public ListaEstudantes()
+        public int projectId;
+        
+        public ListaEstudantes(int _projectId)
         {
+            projectId = _projectId;
+            ManageProjects.ManageProjects manageProjects = new ManageProjects.ManageProjects(projectId);
+
+            List<Aluno> studentList = manageProjects.getStudentData();
+            int i = 0;
+            studentList.ForEach(student => dataGridView1.Rows.Add(++i + "º", student.Name, student.SchoolNumber, student.Contacts, student.DwfPoints, student.SaatyIndex));
+
             InitializeComponent();
         }
 
@@ -74,6 +85,11 @@ namespace ProjectoSAD.Forms
 
 
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
         }
     }
 }
