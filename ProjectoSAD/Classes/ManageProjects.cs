@@ -8,16 +8,16 @@ namespace ProjectoSAD.ManageProjects
 {
     public class ManageProjects
     {
+        public long ProjectId { get; set; }
+
+        public int[] AtrWeight;
         public ManageProjects(long projectId)
         {
             dwfDataContext projeto = new dwfDataContext();
             ProjectId = projectId;
             //array com os pesos dos atributos
-            int[] pesos = projeto.attributes.Where(s => s.project_id == ProjectId).OrderBy(a => a.id).Select(s => s.weight).ToArray();
+            AtrWeight = projeto.attributes.Where(s => s.project_id == ProjectId).OrderBy(a => a.id).Select(s => s.weight).ToArray();
         }
-
-        public long ProjectId { get; set; }
-        public int[] AtrWeight { get; set;}
 
         //lista de alunos com todos os dados necessarios
         //nome, escola, n_escola, ... (classe Aluno)
@@ -27,9 +27,12 @@ namespace ProjectoSAD.ManageProjects
 
             List<student_project> students = projeto.student_projects.Where(s => s.project_id == ProjectId).OrderBy(s => s.student_id).ToList();
 
-            int studentsCount = students.Count();
+            int studentsCount = projeto.student_projects.Where(s => s.project_id == ProjectId).OrderBy(s => s.student_id).Count();
 
-            
+            Debug.WriteLine(studentsCount);
+            Debug.Flush();
+
+
             List<Aluno> alunos = new List<Aluno>();
 
             double[] saatyIndex = new double[studentsCount];

@@ -23,19 +23,17 @@ namespace ProjectoSAD.Forms
         public ListaEstudantes(int _projectId)
         {
             projectId = _projectId;
-            ManageProjects.ManageProjects manageProjects = new ManageProjects.ManageProjects(projectId);
-
-            List<Aluno> studentList = manageProjects.getStudentData();
-            int i = 0;
-            studentList.ForEach(student => dataGridView1.Rows.Add(++i + "º", student.Name, student.SchoolNumber, student.Contacts, student.DwfPoints, student.SaatyIndex));
-
             InitializeComponent();
         }
 
         private void Estudantes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sad_dwfDataSet1.students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter.Fill(this.dwfDataSet.students);
+            ManageProjects.ManageProjects manageProjects = new ManageProjects.ManageProjects(projectId);
+
+            List<Aluno> studentList = manageProjects.getStudentData();
+            int i = 0;
+            studentList.ForEach(student => dataGridView1.Rows.Add(++i + "º", student.Name, student.SchoolNumber, student.Contacts, student.DwfPoints, student.SaatyIndex));
         }
 
         //importar csv
