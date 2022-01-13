@@ -62,20 +62,20 @@ namespace ProjectoSAD.Forms
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 126);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(9, 102);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1083, 34);
+            this.textBox1.Size = new System.Drawing.Size(813, 28);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(961, 34);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(721, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 47);
+            this.button1.Size = new System.Drawing.Size(100, 38);
             this.button1.TabIndex = 2;
             this.button1.Text = "BackOffice";
             this.button1.UseVisualStyleBackColor = true;
@@ -84,9 +84,10 @@ namespace ProjectoSAD.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 94);
+            this.label1.Location = new System.Drawing.Point(9, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 29);
+            this.label1.Size = new System.Drawing.Size(167, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Pesquisar Projecto";
             // 
@@ -94,19 +95,20 @@ namespace ProjectoSAD.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 187);
+            this.label2.Location = new System.Drawing.Point(42, 152);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 32);
+            this.label2.Size = new System.Drawing.Size(196, 26);
             this.label2.TabIndex = 4;
             this.label2.Text = "Registar Projecto";
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(40, 222);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(30, 180);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(281, 76);
+            this.button2.Size = new System.Drawing.Size(211, 62);
             this.button2.TabIndex = 5;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
@@ -114,10 +116,10 @@ namespace ProjectoSAD.Forms
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 12);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(9, 10);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 57);
+            this.button3.Size = new System.Drawing.Size(93, 46);
             this.button3.TabIndex = 6;
             this.button3.Text = "Alunos";
             this.button3.UseVisualStyleBackColor = true;
@@ -133,14 +135,16 @@ namespace ProjectoSAD.Forms
             this.createdatDataGridViewTextBoxColumn,
             this.updatedatDataGridViewTextBoxColumn});
             this.dgvProjectos.DataSource = this.projectsBindingSource;
-            this.dgvProjectos.Location = new System.Drawing.Point(368, 222);
-            this.dgvProjectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvProjectos.Location = new System.Drawing.Point(276, 180);
+            this.dgvProjectos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProjectos.Name = "dgvProjectos";
             this.dgvProjectos.RowHeadersWidth = 51;
             this.dgvProjectos.RowTemplate.Height = 24;
-            this.dgvProjectos.Size = new System.Drawing.Size(300, 476);
+            this.dgvProjectos.Size = new System.Drawing.Size(225, 387);
             this.dgvProjectos.TabIndex = 7;
-            this.dgvProjectos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvProjectos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjectos_CellClick);
+            this.dgvProjectos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjectos_CellDoubleClick);
+            this.dgvProjectos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjectos_CellClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -191,18 +195,19 @@ namespace ProjectoSAD.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(91, 354);
+            this.label3.Location = new System.Drawing.Point(68, 288);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 16);
+            this.label3.Size = new System.Drawing.Size(132, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Importar Lista de Projectos";
             // 
             // btmImportarListaProjectos
             // 
-            this.btmImportarListaProjectos.Location = new System.Drawing.Point(43, 379);
-            this.btmImportarListaProjectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btmImportarListaProjectos.Location = new System.Drawing.Point(32, 308);
+            this.btmImportarListaProjectos.Margin = new System.Windows.Forms.Padding(2);
             this.btmImportarListaProjectos.Name = "btmImportarListaProjectos";
-            this.btmImportarListaProjectos.Size = new System.Drawing.Size(277, 78);
+            this.btmImportarListaProjectos.Size = new System.Drawing.Size(208, 63);
             this.btmImportarListaProjectos.TabIndex = 9;
             this.btmImportarListaProjectos.Text = "Abrir Lista";
             this.btmImportarListaProjectos.UseVisualStyleBackColor = true;
@@ -211,12 +216,12 @@ namespace ProjectoSAD.Forms
             // dgvAtributos
             // 
             this.dgvAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAtributos.Location = new System.Drawing.Point(676, 222);
-            this.dgvAtributos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvAtributos.Location = new System.Drawing.Point(507, 180);
+            this.dgvAtributos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAtributos.Name = "dgvAtributos";
             this.dgvAtributos.RowHeadersWidth = 51;
             this.dgvAtributos.RowTemplate.Height = 24;
-            this.dgvAtributos.Size = new System.Drawing.Size(419, 476);
+            this.dgvAtributos.Size = new System.Drawing.Size(314, 387);
             this.dgvAtributos.TabIndex = 10;
             this.dgvAtributos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAtributos_CellValueChanged);
             // 
@@ -231,9 +236,9 @@ namespace ProjectoSAD.Forms
             // 
             // ListaProjectos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 710);
+            this.ClientSize = new System.Drawing.Size(830, 577);
             this.Controls.Add(this.dgvAtributos);
             this.Controls.Add(this.btmImportarListaProjectos);
             this.Controls.Add(this.label3);
@@ -244,7 +249,7 @@ namespace ProjectoSAD.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ListaProjectos";
             this.Text = "ListaProjectos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListaProjectos_FormClosing);

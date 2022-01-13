@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using ProjectoSAD.Data;
+using ProjectoSAD.Forms.InserirAtributos;
 using ProjectoSAD.Forms.InserirProjectos;
 using ProjectoSAD.Models;
 using System;
@@ -129,43 +130,6 @@ namespace ProjectoSAD.Forms
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dgvAtributos.DataSource = null;
-
-            string pID = dgvProjectos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            int projectoID = 0;
-            bool res = int.TryParse(pID, out projectoID);
-
-            dwfDataContext dwf = new dwfDataContext();
-            List<attribute> filtered = new List<attribute>();
-            //recolha dos projectos existentes na base de dados
-            List<attribute> attributes = dwf.attributes.Where(a => a.project_id == projectoID).ToList();
-            List<WeightedAttribute> wAttributes = new List<WeightedAttribute>();
-
-            foreach (var att in attributes)
-            {
-                WeightedAttribute wa = new WeightedAttribute
-                {
-                    attributeID = att.id,
-                    projectoID = att.project_id,
-                    name = att.name,
-                    weight = att.weight
-                };
-
-                wAttributes.Add(wa);
-            }
-
-            dgvAtributos.DataSource = wAttributes;
-            dgvAtributos.Columns["name"].DisplayIndex = 0;
-            dgvAtributos.Columns["weight"].DisplayIndex = 1;
-            dgvAtributos.Columns["projectoID"].DisplayIndex = 2;
-            dgvAtributos.Columns["attributeID"].DisplayIndex = 3;
-            dgvAtributos.Columns["attributeID"].Visible = false;
-            dgvAtributos.Columns["projectoID"].Visible = false;
-
-        }
-
         private void dgvAtributos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -191,6 +155,49 @@ namespace ProjectoSAD.Forms
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvProjectos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int pID = int.Parse(dgvProjectos.Rows[e.RowIndex].Cells[0].Value.ToString());
+            InserirAtributo inserirAtributo = new InserirAtributo(pID);
+            inserirAtributo.Show();
+        }
+
+        private void dgvProjectos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvAtributos.DataSource = null;
+
+            string pID = dgvProjectos.Rows[e.RowIndex].Cells[0].Value.ToString();
+            int projectoID = 0;
+            bool res = int.TryParse(pID, out projectoID);
+
+            dwfDataContext dwf = new dwfDataContext();
+            List<attribute> filtered = new List<attribute>();
+            //recolha dos projectos existentes na base de dados
+            List<attribute> attributes = dwf.attributes.Where(a => a.project_id == projectoID).ToList();
+            List<WeightedAttribute> wAttributes = new List<WeightedAttribute>();
+
+            foreach (var att in attributes)
+            {
+                WeightedAttribute wa = new WeightedAttribute
+                {
+                    attributeID = att.id,
+                    projectoID = att.project_id,
+                    name = att.name,
+                    weight = att.weight
+                };
+
+                wAttributes.Add(wa);
+            }
+            dgvAtributos.DataSource = wAttributes;
+            dgvAtributos.Columns["name"].DisplayIndex = 0;
+            dgvAtributos.Columns["weight"].DisplayIndex = 1;
+            dgvAtributos.Columns["projectoID"].DisplayIndex = 2;
+            dgvAtributos.Columns["attributeID"].DisplayIndex = 3;
+            dgvAtributos.Columns["attributeID"].Visible = false;
+            dgvAtributos.Columns["projectoID"].Visible = false;
 
         }
     }

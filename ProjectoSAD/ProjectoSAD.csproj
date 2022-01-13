@@ -120,6 +120,12 @@
     <Compile Include="Forms\Inicio\Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InserirAtributos\InserirAtributo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InserirAtributos\InserirAtributo.Designer.cs">
+      <DependentUpon>InserirAtributo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InserirProjectos\InserirProjeto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <Compile Include="UserData\CurrentUser.cs" />
     <EmbeddedResource Include="Forms\Inicio\Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InserirAtributos\InserirAtributo.resx">
+      <DependentUpon>InserirAtributo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InserirProjectos\InserirProjeto.resx">
       <DependentUpon>InserirProjeto.cs</DependentUpon>
