@@ -51,10 +51,10 @@ namespace ProjectoSAD.Forms
             // 
             // btnImportar
             // 
-            this.btnImportar.Location = new System.Drawing.Point(12, 12);
-            this.btnImportar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImportar.Location = new System.Drawing.Point(9, 10);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(176, 46);
+            this.btnImportar.Size = new System.Drawing.Size(132, 37);
             this.btnImportar.TabIndex = 0;
             this.btnImportar.Text = "Importar Ficheiro de alunos";
             this.btnImportar.UseVisualStyleBackColor = true;
@@ -88,11 +88,12 @@ namespace ProjectoSAD.Forms
             this.email,
             this.dwfPoints,
             this.saatyIndex});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 138);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 51);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1307, 384);
+            this.dataGridView1.Size = new System.Drawing.Size(990, 232);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -140,12 +141,12 @@ namespace ProjectoSAD.Forms
             // 
             // ListaEstudantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 511);
+            this.ClientSize = new System.Drawing.Size(1010, 294);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnImportar);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ListaEstudantes";
             this.Text = "Estudantes";
             this.Load += new System.EventHandler(this.Estudantes_Load);

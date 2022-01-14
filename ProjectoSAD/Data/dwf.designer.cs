@@ -112,14 +112,6 @@ namespace ProjectoSAD.Data
 			}
 		}
 		
-		public System.Data.Linq.Table<student_project> student_projects
-		{
-			get
-			{
-				return this.GetTable<student_project>();
-			}
-		}
-		
 		public System.Data.Linq.Table<student> students
 		{
 			get
@@ -133,6 +125,14 @@ namespace ProjectoSAD.Data
 			get
 			{
 				return this.GetTable<user>();
+			}
+		}
+		
+		public System.Data.Linq.Table<student_project> student_projects
+		{
+			get
+			{
+				return this.GetTable<student_project>();
 			}
 		}
 		
@@ -1008,51 +1008,6 @@ namespace ProjectoSAD.Data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.student_project")]
-	public partial class student_project
-	{
-		
-		private int _project_id;
-		
-		private int _student_id;
-		
-		public student_project()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_project_id", DbType="Int NOT NULL")]
-		public int project_id
-		{
-			get
-			{
-				return this._project_id;
-			}
-			set
-			{
-				if ((this._project_id != value))
-				{
-					this._project_id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_student_id", DbType="Int NOT NULL")]
-		public int student_id
-		{
-			get
-			{
-				return this._student_id;
-			}
-			set
-			{
-				if ((this._student_id != value))
-				{
-					this._student_id = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.students")]
 	public partial class student : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1606,9 +1561,74 @@ namespace ProjectoSAD.Data
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.student_project")]
+	public partial class student_project
+	{
+		
+		private int _id;
+		
+		private int _project_id;
+		
+		private int _student_id;
+		
+		public student_project()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_project_id", DbType="Int NOT NULL")]
+		public int project_id
+		{
+			get
+			{
+				return this._project_id;
+			}
+			set
+			{
+				if ((this._project_id != value))
+				{
+					this._project_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_student_id", DbType="Int NOT NULL")]
+		public int student_id
+		{
+			get
+			{
+				return this._student_id;
+			}
+			set
+			{
+				if ((this._student_id != value))
+				{
+					this._student_id = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.users_projects")]
 	public partial class users_project
 	{
+		
+		private int _id;
 		
 		private int _user_id;
 		
@@ -1616,6 +1636,22 @@ namespace ProjectoSAD.Data
 		
 		public users_project()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int NOT NULL")]

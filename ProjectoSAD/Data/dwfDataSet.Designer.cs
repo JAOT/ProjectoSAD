@@ -46,15 +46,15 @@ namespace ProjectoSAD.Data {
         
         private global::System.Data.DataRelation relationstudent_attribute_student_id_fk;
         
-        private global::System.Data.DataRelation relationstudent_project_projects_id_fk;
-        
-        private global::System.Data.DataRelation relationstudent_project_students_id_fk;
-        
         private global::System.Data.DataRelation relationusers_role_id_fk;
+        
+        private global::System.Data.DataRelation relationusers_projects_users_id_fk;
         
         private global::System.Data.DataRelation relationusers_projects_projects_id_fk;
         
-        private global::System.Data.DataRelation relationusers_projects_users_id_fk;
+        private global::System.Data.DataRelation relationstudent_project_students_id_fk;
+        
+        private global::System.Data.DataRelation relationstudent_project_projects_id_fk;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -381,11 +381,11 @@ namespace ProjectoSAD.Data {
             this.relationattributes_projects_projects_id_fk = this.Relations["attributes_projects_projects_id_fk"];
             this.relationstudent_attribute_atributes_id_fk = this.Relations["student_attribute_atributes_id_fk"];
             this.relationstudent_attribute_student_id_fk = this.Relations["student_attribute_student_id_fk"];
-            this.relationstudent_project_projects_id_fk = this.Relations["student_project_projects_id_fk"];
-            this.relationstudent_project_students_id_fk = this.Relations["student_project_students_id_fk"];
             this.relationusers_role_id_fk = this.Relations["users_role_id_fk"];
-            this.relationusers_projects_projects_id_fk = this.Relations["users_projects_projects_id_fk"];
             this.relationusers_projects_users_id_fk = this.Relations["users_projects_users_id_fk"];
+            this.relationusers_projects_projects_id_fk = this.Relations["users_projects_projects_id_fk"];
+            this.relationstudent_project_students_id_fk = this.Relations["student_project_students_id_fk"];
+            this.relationstudent_project_projects_id_fk = this.Relations["student_project_projects_id_fk"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -424,26 +424,26 @@ namespace ProjectoSAD.Data {
                         this.tablestudents.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablestudent_attribute.student_idColumn}, false);
             this.Relations.Add(this.relationstudent_attribute_student_id_fk);
-            this.relationstudent_project_projects_id_fk = new global::System.Data.DataRelation("student_project_projects_id_fk", new global::System.Data.DataColumn[] {
-                        this.tableprojects.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablestudent_project.project_idColumn}, false);
-            this.Relations.Add(this.relationstudent_project_projects_id_fk);
-            this.relationstudent_project_students_id_fk = new global::System.Data.DataRelation("student_project_students_id_fk", new global::System.Data.DataColumn[] {
-                        this.tablestudents.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablestudent_project.student_idColumn}, false);
-            this.Relations.Add(this.relationstudent_project_students_id_fk);
             this.relationusers_role_id_fk = new global::System.Data.DataRelation("users_role_id_fk", new global::System.Data.DataColumn[] {
                         this.tablerole.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableusers.role_idColumn}, false);
             this.Relations.Add(this.relationusers_role_id_fk);
-            this.relationusers_projects_projects_id_fk = new global::System.Data.DataRelation("users_projects_projects_id_fk", new global::System.Data.DataColumn[] {
-                        this.tableprojects.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableusers_projects.project_idColumn}, false);
-            this.Relations.Add(this.relationusers_projects_projects_id_fk);
             this.relationusers_projects_users_id_fk = new global::System.Data.DataRelation("users_projects_users_id_fk", new global::System.Data.DataColumn[] {
                         this.tableusers.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableusers_projects.user_idColumn}, false);
             this.Relations.Add(this.relationusers_projects_users_id_fk);
+            this.relationusers_projects_projects_id_fk = new global::System.Data.DataRelation("users_projects_projects_id_fk", new global::System.Data.DataColumn[] {
+                        this.tableprojects.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableusers_projects.project_idColumn}, false);
+            this.Relations.Add(this.relationusers_projects_projects_id_fk);
+            this.relationstudent_project_students_id_fk = new global::System.Data.DataRelation("student_project_students_id_fk", new global::System.Data.DataColumn[] {
+                        this.tablestudents.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestudent_project.student_idColumn}, false);
+            this.Relations.Add(this.relationstudent_project_students_id_fk);
+            this.relationstudent_project_projects_id_fk = new global::System.Data.DataRelation("student_project_projects_id_fk", new global::System.Data.DataColumn[] {
+                        this.tableprojects.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablestudent_project.project_idColumn}, false);
+            this.Relations.Add(this.relationstudent_project_projects_id_fk);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1892,6 +1892,8 @@ namespace ProjectoSAD.Data {
             
             private global::System.Data.DataColumn columnstudent_id;
             
+            private global::System.Data.DataColumn columnid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public student_projectDataTable() {
@@ -1943,6 +1945,14 @@ namespace ProjectoSAD.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1982,6 +1992,7 @@ namespace ProjectoSAD.Data {
                 student_projectRow rowstudent_projectRow = ((student_projectRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        null,
                         null};
                 if ((parentprojectsRowBystudent_project_projects_id_fk != null)) {
                     columnValuesArray[0] = parentprojectsRowBystudent_project_projects_id_fk[0];
@@ -2013,6 +2024,7 @@ namespace ProjectoSAD.Data {
             internal void InitVars() {
                 this.columnproject_id = base.Columns["project_id"];
                 this.columnstudent_id = base.Columns["student_id"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2022,8 +2034,15 @@ namespace ProjectoSAD.Data {
                 base.Columns.Add(this.columnproject_id);
                 this.columnstudent_id = new global::System.Data.DataColumn("student_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstudent_id);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnproject_id.AllowDBNull = false;
                 this.columnstudent_id.AllowDBNull = false;
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2916,6 +2935,8 @@ namespace ProjectoSAD.Data {
             
             private global::System.Data.DataColumn columnproject_id;
             
+            private global::System.Data.DataColumn columnid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public users_projectsDataTable() {
@@ -2967,6 +2988,14 @@ namespace ProjectoSAD.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3006,6 +3035,7 @@ namespace ProjectoSAD.Data {
                 users_projectsRow rowusers_projectsRow = ((users_projectsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
+                        null,
                         null};
                 if ((parentusersRowByusers_projects_users_id_fk != null)) {
                     columnValuesArray[0] = parentusersRowByusers_projects_users_id_fk[0];
@@ -3037,6 +3067,7 @@ namespace ProjectoSAD.Data {
             internal void InitVars() {
                 this.columnuser_id = base.Columns["user_id"];
                 this.columnproject_id = base.Columns["project_id"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3046,8 +3077,15 @@ namespace ProjectoSAD.Data {
                 base.Columns.Add(this.columnuser_id);
                 this.columnproject_id = new global::System.Data.DataColumn("project_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproject_id);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnuser_id.AllowDBNull = false;
                 this.columnproject_id.AllowDBNull = false;
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3399,23 +3437,23 @@ namespace ProjectoSAD.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public student_projectRow[] Getstudent_projectRows() {
-                if ((this.Table.ChildRelations["student_project_projects_id_fk"] == null)) {
-                    return new student_projectRow[0];
-                }
-                else {
-                    return ((student_projectRow[])(base.GetChildRows(this.Table.ChildRelations["student_project_projects_id_fk"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public users_projectsRow[] Getusers_projectsRows() {
                 if ((this.Table.ChildRelations["users_projects_projects_id_fk"] == null)) {
                     return new users_projectsRow[0];
                 }
                 else {
                     return ((users_projectsRow[])(base.GetChildRows(this.Table.ChildRelations["users_projects_projects_id_fk"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public student_projectRow[] Getstudent_projectRows() {
+                if ((this.Table.ChildRelations["student_project_projects_id_fk"] == null)) {
+                    return new student_projectRow[0];
+                }
+                else {
+                    return ((student_projectRow[])(base.GetChildRows(this.Table.ChildRelations["student_project_projects_id_fk"])));
                 }
             }
         }
@@ -3710,12 +3748,12 @@ namespace ProjectoSAD.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public projectsRow projectsRow {
+            public int id {
                 get {
-                    return ((projectsRow)(this.GetParentRow(this.Table.ParentRelations["student_project_projects_id_fk"])));
+                    return ((int)(this[this.tablestudent_project.idColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["student_project_projects_id_fk"]);
+                    this[this.tablestudent_project.idColumn] = value;
                 }
             }
             
@@ -3727,6 +3765,17 @@ namespace ProjectoSAD.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["student_project_students_id_fk"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public projectsRow projectsRow {
+                get {
+                    return ((projectsRow)(this.GetParentRow(this.Table.ParentRelations["student_project_projects_id_fk"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["student_project_projects_id_fk"]);
                 }
             }
         }
@@ -4132,12 +4181,12 @@ namespace ProjectoSAD.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public projectsRow projectsRow {
+            public int id {
                 get {
-                    return ((projectsRow)(this.GetParentRow(this.Table.ParentRelations["users_projects_projects_id_fk"])));
+                    return ((int)(this[this.tableusers_projects.idColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["users_projects_projects_id_fk"]);
+                    this[this.tableusers_projects.idColumn] = value;
                 }
             }
             
@@ -4149,6 +4198,17 @@ namespace ProjectoSAD.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["users_projects_users_id_fk"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public projectsRow projectsRow {
+                get {
+                    return ((projectsRow)(this.GetParentRow(this.Table.ParentRelations["users_projects_projects_id_fk"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["users_projects_projects_id_fk"]);
                 }
             }
         }
@@ -6120,6 +6180,7 @@ SELECT id, attribute_id, student_id, student_evaluation, created_at, updated_at 
             tableMapping.DataSetTable = "student_project";
             tableMapping.ColumnMappings.Add("project_id", "project_id");
             tableMapping.ColumnMappings.Add("student_id", "student_id");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -6143,7 +6204,7 @@ SELECT id, attribute_id, student_id, student_evaluation, created_at, updated_at 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT project_id, student_id FROM dbo.student_project";
+            this._commandCollection[0].CommandText = "SELECT id, project_id, student_id FROM dbo.student_project";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7376,6 +7437,7 @@ SELECT id, token, created_at, role_id, fname, lname, phone, email, password, act
             tableMapping.DataSetTable = "users_projects";
             tableMapping.ColumnMappings.Add("user_id", "user_id");
             tableMapping.ColumnMappings.Add("project_id", "project_id");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -7399,7 +7461,7 @@ SELECT id, token, created_at, role_id, fname, lname, phone, email, password, act
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT user_id, project_id FROM dbo.users_projects";
+            this._commandCollection[0].CommandText = "SELECT id, user_id, project_id FROM dbo.users_projects";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

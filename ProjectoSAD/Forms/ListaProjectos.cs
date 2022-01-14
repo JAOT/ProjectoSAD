@@ -42,7 +42,7 @@ namespace ProjectoSAD.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             //Apresentação da lista de estudantes já integrados
-            ListaEstudantes estudantes = new ListaEstudantes(3);
+            ListaEstudantes estudantes = new ListaEstudantes(1);
             estudantes.Show();
 
         }

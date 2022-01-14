@@ -49,38 +49,41 @@ namespace ProjectoSAD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string email = txtName.Text;
+            ListaProjectos lp = new Forms.ListaProjectos();
+            lp.Show();
 
-            dwfDataContext dwfDataContext = new dwfDataContext();
-            user user = dwfDataContext.users.Where(u => u.email == email).FirstOrDefault();
-            if (user!=null)
-            {
-                if (txtPassword.Text == DesencriptaPassword(user.password))
-                {
-                    var fname = user.fname;
-                    var lname = user.lname;
+            //string email = txtName.Text;
 
-                    MessageBox.Show("Bem-vindo " + fname + " " + lname);
-                    currentUser = new CurrentUser
-                    {
-                        name = user.fname + " " + user.lname,
-                        phone = user.phone,
-                        password = user.password,
-                        role = dwfDataContext.roles.Where(r => r.id == user.role_id).FirstOrDefault()
-                    };
-                    ListaProjectos lp = new Forms.ListaProjectos();
-                    lp.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Utilizador ou password errados.\nPor favor, tentar de novo.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Utilizador não existente ou não encontrado.");
-            }
+            //dwfDataContext dwfDataContext = new dwfDataContext();
+            //user user = dwfDataContext.users.Where(u => u.email == email).FirstOrDefault();
+            //if (user!=null)
+            //{
+            //    if (txtPassword.Text == DesencriptaPassword(user.password))
+            //    {
+            //        var fname = user.fname;
+            //        var lname = user.lname;
+
+            //        MessageBox.Show("Bem-vindo " + fname + " " + lname);
+            //        currentUser = new CurrentUser
+            //        {
+            //            name = user.fname + " " + user.lname,
+            //            phone = user.phone,
+            //            password = user.password,
+            //            role = dwfDataContext.roles.Where(r => r.id == user.role_id).FirstOrDefault()
+            //        };
+            //        ListaProjectos lp = new Forms.ListaProjectos();
+            //        lp.Show();
+            //        this.Hide();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Utilizador ou password errados.\nPor favor, tentar de novo.");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Utilizador não existente ou não encontrado.");
+            //}
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
