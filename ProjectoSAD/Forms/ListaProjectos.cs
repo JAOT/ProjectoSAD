@@ -19,6 +19,7 @@ namespace ProjectoSAD.Forms
 {
     public partial class ListaProjectos : Form
     {       
+        int ProjetoID { get; set; }
         public ListaProjectos()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace ProjectoSAD.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             //Apresentação da lista de estudantes já integrados
-            ListaEstudantes estudantes = new ListaEstudantes(1);
+            ListaEstudantes estudantes = new ListaEstudantes(ProjetoID);
             estudantes.Show();
 
         }
@@ -188,7 +189,7 @@ namespace ProjectoSAD.Forms
                     name = att.name,
                     weight = att.weight
                 };
-
+                ProjetoID = (int)wa.projectoID;
                 wAttributes.Add(wa);
             }
             dgvAtributos.DataSource = wAttributes;

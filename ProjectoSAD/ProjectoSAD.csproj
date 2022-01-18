@@ -133,6 +133,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dwfDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditarAtributos\EditarAtributo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditarAtributos\EditarAtributo.Designer.cs">
+      <DependentUpon>EditarAtributo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Inicio\Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserData\CurrentUser.cs" />
+    <EmbeddedResource Include="Forms\EditarAtributos\EditarAtributo.resx">
+      <DependentUpon>EditarAtributo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inicio\Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>

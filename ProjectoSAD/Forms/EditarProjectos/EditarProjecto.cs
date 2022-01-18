@@ -1,6 +1,7 @@
 ﻿using ClosedXML.Excel;
 using ProjectoSAD.Classes;
 using ProjectoSAD.Data;
+using ProjectoSAD.Forms.EditarAtributos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,7 +89,16 @@ namespace ProjectoSAD.Forms.InserirAtributos
             }
             try
             {
-                workBook.SaveAs(@"d:\dwf_" + pNome + ".xlsx");
+                var fBD = new FolderBrowserDialog();
+                fBD.ShowDialog();
+                string pasta = fBD.SelectedPath;
+                if (!string.IsNullOrEmpty(pasta))
+                {
+                    string caminho = pasta + "\\dwf_" + pNome + ".xlsx";
+                    workBook.SaveAs(caminho);
+                    MessageBox.Show("Ficheiro gravado como: " + caminho);
+
+                }
             }
             catch (Exception ex)
             {
@@ -140,8 +150,15 @@ namespace ProjectoSAD.Forms.InserirAtributos
                                 updated_at= DateTime.Now
                             };
 
-
-                            dwf.student_attributes.InsertOnSubmit(student_Attribute);
+                            var existeRegisto = dwf.student_attributes.Where(sa => sa.attribute_id == idAtr).Where(sa => sa.student_id == idAluno).FirstOrDefault();
+                            if (existeRegisto != null)
+                            {
+                                /****/
+                                dwf.student_attributes.DeleteOnSubmit(existeRegisto);
+                                dwf.student_attributes.InsertOnSubmit(student_Attribute);
+                                /***/
+                            }
+                            
                             dwf.SubmitChanges();
                             coluna++;
                         }
@@ -155,6 +172,32 @@ namespace ProjectoSAD.Forms.InserirAtributos
                 }
 
             }
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            var atributos = dwf.attributes.Where(a => a.project_id == IDProjecto).ToList();
+
+            for (int i = 0; i < atributos.Count(); i++)
+            {
+                var atr1 = atributos[i].name;
+                for (int j = i+1; j < atributos.Count(); j++)
+                {
+                    //0-1
+                    //0-2
+                    //1-2
+                    var atr2 = atributos[j].name;
+
+                    //MessageBox.Show(atr1 + " - " + atr2);
+                    EditarAtributo editar = new EditarAtributo();
+                    editar.atr1Nome = atr1;
+                    editar.atr2Nome = atr2;
+                    
+                    editar.Show();
+
+                }
+            }
+
         }
     }
 }

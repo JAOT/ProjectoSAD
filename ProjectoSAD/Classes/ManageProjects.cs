@@ -212,7 +212,7 @@ namespace ProjectoSAD.ManageProjects
             int max = 0;
             int atual = 0;
 
-            for (int i = 0; i < val.Length; i++) {
+            for (int i = 0; i < matrix.Length; i++) {
                 max += 5 * matrix[i];
                 atual += val[i] * matrix[i];
             }
